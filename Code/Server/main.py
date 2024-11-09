@@ -5,35 +5,36 @@ import sqlite3
 
 api = Flask(__name__)
 
-api_list = [
-{
-    "name": "screw m3",
-    "description": "item1 description",
-    "category": "screw",
-    "quantity": 1,
-    "node": 1,
-    "position": 1,
-    "image": "image1"
-}, 
-{
-    "name": "screw m4",
-    "description": "item1 description",
-    "category": "screw",
-    "quantity": 1,
-    "node": 2,
-    "position": 2,
-    "image": "image1"
-}, 
-{
-    "name": "Tesa Tape",
-    "description": "item2 description",
-    "category": "tape",
-    "quantity": 5,
-    "node": 2,
-    "position": 3,
-    "image": "ima5555"
-}
-]
+# api_list = [
+# {
+#     "name": "screw m3",
+#     "description": "item1 description",
+#     "category": "screw",
+#     "quantity": 1,
+#     "node": 1,
+#     "position": 1,
+#     "image": "image1"
+# }, 
+# {
+#     "name": "screw m4",
+#     "description": "item1 description",
+#     "category": "screw",
+#     "quantity": 1,
+#     "node": 2,
+#     "position": 2,
+#     "image": "image1"
+# }, 
+# {
+#     "name": "Tesa Tape",
+#     "description": "item2 description",
+#     "category": "tape",
+#     "quantity": 5,
+#     "node": 2,
+#     "position": 3,
+#     "image": "ima5555"
+# }
+# ]
+
 # DB structure item, description, category, quantity, node, position, image (optional)
 
 def init_db():
@@ -53,7 +54,12 @@ def init_db():
     conn.close()
 
 def listStorage():
-    return api_list
+    conn = sqlite3.connect('database.db')
+    c = conn.cursor()
+    c.execute("SELECT * FROM Storage")
+    items = c.fetchall()
+    conn.close()
+    return items
 
 @api.route('/api/list', methods=['GET'])
 def get_list():
@@ -80,7 +86,18 @@ def get_list():
         
     return json.jsonify(storage)
 
-    # return json.jsonify(listStorage)
+@api.route('/api/add', methods=['POST'])
+def add_item():
+    item = request.json
+    conn = sqlite3.connect('database.db')
+    c = conn.cursor()
+    c.execute("INSERT INTO Storage (item, description, category, quantity, node , position, image) VALUES (?, ?, ?, ?, ?, ?, ?)", 
+        (item['name'], item['description'], item['category'], item['quantity'], item['node'], item['position'], item['image']))
+    conn.commit()
+    conn.close()
+    return json.jsonify({"success": True})
+
+
 
 if __name__ == '__main__':
     init_db()
