@@ -2,3 +2,6 @@
 Code/venv
 Code/Server/database.db
 .vscode
+.pio
+*backup*
+.env
