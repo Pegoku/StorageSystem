@@ -5,6 +5,6 @@ Api part of the storage manager
 [x] Add
 [x] Rm
 [x] Edit
-[]  Locate
+[x]  Locate
 [x]  Quantity
 [x]  Move
