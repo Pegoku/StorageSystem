@@ -1,11 +1,13 @@
 from flask import Flask, request, json, Response
+from flask_cors import CORS
+
 import requests
 
 import sqlite3
 
 
 api = Flask(__name__)
-
+CORS(api)
 # api_list = [
 # {
 #     "name": "screw m3",
@@ -14,7 +16,7 @@ api = Flask(__name__)
 #     "quantity": 1,
 #     "node": 1,
 #     "position": 1,
-#     "image": "image1"
+#     "url": "url1"
 # }, 
 # {
 #     "name": "screw m4",
@@ -23,7 +25,7 @@ api = Flask(__name__)
 #     "quantity": 1,
 #     "node": 2,
 #     "position": 2,
-#     "image": "image1"
+#     "url": "url1"
 # }, 
 # {
 #     "name": "Tesa Tape",
@@ -32,11 +34,11 @@ api = Flask(__name__)
 #     "quantity": 5,
 #     "node": 2,
 #     "position": 3,
-#     "image": "ima5555"
+#     "url": "ima5555"
 # }
 # ]
 
-# DB structure item, description, category, quantity, node, position, image (optional)
+# DB structure item, description, category, quantity, node, position, url (optional)
 
 def init_db():
     conn = sqlite3.connect('database.db')
@@ -49,7 +51,7 @@ def init_db():
         quantity INTEGER,
         node INTEGER,
         position INTEGER,
-        image TEXT)""")
+        url TEXT)""")
     conn.commit()
     
     c.execute("""CREATE TABLE IF NOT EXISTS Nodes(
@@ -103,13 +105,53 @@ def get_list():
         
     return json.jsonify(storage)
 
+@api.route('/api/locateget', methods=['GET'])
+def locate_get_item():
+    # id = request.args.get('id')
+    
+    try:
+        id = int(request.args.get('id'))
+    except (TypeError, ValueError):
+        return jsonify({"error": "id must be an integer"})
+
+    
+    if not id:
+        return json.jsonify({"error": "id is required"})
+    else:
+        storage = listStorage()
+        if not any(i[0] == id for i in storage):
+            return json.jsonify({"error": "Item with id not found"})
+        conn = sqlite3.connect('database.db')
+        c = conn.cursor()
+        c.execute("SELECT node, position FROM Storage WHERE id = ?", (id,))
+        location = c.fetchone()
+        # conn.close()
+        node = location[0]
+        position = location[1]
+        
+        c.execute("SELECT ip FROM Nodes WHERE id = ?", (node,))
+        ip = c.fetchone()[0]
+        conn.close()
+        
+        url = "http://" + ip + ":4444/locate"
+        
+        payload = {"slot": position}
+        headers = {'Content-Type': 'application/json'}
+        
+        nodeResponse = requests.post(url, data=json.dumps(payload), headers=headers)
+
+        if nodeResponse.status_code == 200:
+            return json.jsonify({"success": True})
+        else:
+            return json.jsonify({"error": True})
+
 @api.route('/api/additem', methods=['POST'])
 def add_item():
     item = request.json
     conn = sqlite3.connect('database.db')
     c = conn.cursor()
-    c.execute("INSERT INTO Storage (item, description, category, quantity, node , position, image) VALUES (?, ?, ?, ?, ?, ?, ?)", 
-        (item['name'], item['description'], item['category'], item['quantity'], item['node'], item['position'], item['image']))
+    c.execute("INSERT INTO Storage (item, description, category, quantity, node , position, url) VALUES (?, ?, ?, ?, ?, ?, ?)", 
+        (item['name'], item['description'], item['category'], item['quantity'], item['node'], item['position'], item['url']))
     conn.commit()
     conn.close()
     return json.jsonify({"success": True})
@@ -169,8 +211,8 @@ def edit_item():
             return json.jsonify({"error": "Item with id not found"})
         conn = sqlite3.connect('database.db')
         c = conn.cursor()
-        c.execute("UPDATE Storage SET item = ?, description = ?, category = ?, quantity = ?, node = ?, position = ?, image = ? WHERE id = ?", 
-            (item['name'], item['description'], item['category'], item['quantity'], item['node'], item['position'], item['image'], item['id']))
+        c.execute("UPDATE Storage SET item = ?, description = ?, category = ?, quantity = ?, node = ?, position = ?, url = ? WHERE id = ?", 
+            (item['name'], item['description'], item['category'], item['quantity'], item['node'], item['position'], item['url'], item['id']))
         conn.commit()
         conn.close()
         return json.jsonify({"success": True})
@@ -263,9 +305,9 @@ def locate_item():
         nodeResponse = requests.post(url, data=json.dumps(payload), headers=headers)
 
         if nodeResponse.status_code == 200:
-            return Response("Success", mimetype='text/plain')
+            return json.jsonify({"success": True})
         else:
-            return Response("Error", mimetype='text/plain')
+            return json.jsonify({"error": True})
         # return json.jsonify({"node": location[0], "position": location[1]})
 
 if __name__ == '__main__':
