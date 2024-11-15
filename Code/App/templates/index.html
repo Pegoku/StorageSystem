@@ -1,0 +1,101 @@
+<!-- Example contents:
+[
+	[
+		1,
+		"nut m42",
+		"item1 description",
+		"screw",
+		10,
+		1,
+		2,
+		"none"
+	],
+	[
+		2,
+		"nut m4456232",
+		"item1 description",
+		"screw",
+		10,
+		1,
+		2,
+		"none"
+	],
+	[
+		3,
+		"nut m44562",
+		"item1 description",
+		"screw",
+		10,
+		1,
+		2,
+		"none"
+	],
+	[
+		4,
+		"nut m44562",
+		"item1 description",
+		"screw",
+		10,
+		1,
+		5,
+		"none"
+	],
+	[
+		5,
+		"nut m44562",
+		"item1 description",
+		"nut",
+		10,
+		1,
+		5,
+		"none"
+	],
+	[
+		6,
+		"nut m44562",
+		"item1 description",
+		"nut,bolt",
+		10,
+		1,
+		5,
+		"none"
+	]
+]-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+	<link rel="stylesheet" type="text/css" href="../static/style2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Item List</h1>
+    <table id="itemTable">
+        <thead>
+            <tr>
+                <th class="topTable" >Name</th>
+                <th class="topTable" >Description</th>
+                <th class="topTable" >Category</th>
+                <th class="topTable" >Quantity</th>
+                <th class="topTable" >Node</th>
+                <th class="topTable" >Position</th>
+				<th class="topTable" >Delete</th>
+				<th class="topTable" >Locate</th>
+				<th class="topTable" >Link</th>
+
+			</tr>
+        </thead>
+        <tbody>
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+    
+    <script src="../static/script.js"></script>
+
+</body>
+
+
+</html>
