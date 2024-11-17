@@ -174,7 +174,13 @@ def add_node():
     nodes = listNodes()
     
     if any(i[0] == item['id'] for i in nodes):
-        return json.jsonify({"error": "Item with id already exists"})
+        conn = sqlite3.connect('database.db')
+        c = conn.cursor()
+        c.execute("UPDATE Nodes set ip = ?, slots = ? WHERE id = ?", 
+            (item['ip'], item['slots'], item['id']))
+        conn.commit()
+        conn.close()
+        return json.jsonify({"error": "Item with id already exists, updated anyway"})
     
     conn = sqlite3.connect('database.db')
     c = conn.cursor()

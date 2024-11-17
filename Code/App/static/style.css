@@ -281,6 +281,12 @@
     table tbody tr td:nth-child(6):before {
       content: "Position";
     }
+    table tbody tr td:nth-child(7):before {
+      content: "Delete";
+    }
+    table tbody tr td:nth-child(8):before {
+      content: "Locate";
+    }
   
     .column4,
     .column5,

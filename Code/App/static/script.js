@@ -49,8 +49,25 @@ document.addEventListener('DOMContentLoaded', function() {
                         input.value = item[i];
                         input.classList.add('quantityInputNum');
                         cell.appendChild(input);
-                    } else{
-                    row.insertCell(i - 1).textContent = item[i];
+                    } else {
+                        if (i === 7) {
+                            continue;
+                        }
+                    {
+                        if (i === 1) {
+                            if (item[7] !== "none") {
+                                const cell = row.insertCell(i - 1);
+                                const link = document.createElement('a');
+                                link.href = item[7];
+                                link.textContent = item[i];
+                                cell.appendChild(link);
+                            } else {
+                                row.insertCell(i - 1).textContent = item[i];
+                            }
+                        } else {
+                            row.insertCell(i - 1).textContent = item[i];
+                        }
+                    }
                   }
                 }
 
@@ -63,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Add "Delete" button
-        const deleteCell = row.insertCell(item.length - 1);
+        const deleteCell = row.insertCell(item.length - 2);
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.addEventListener('click', () => {
@@ -76,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
         deleteCell.appendChild(deleteButton);
 
         // Add "Locate" button
-        const locateCell = row.insertCell(item.length);
+        const locateCell = row.insertCell(item.length - 1);
         const locateButton = document.createElement('button');
         locateButton.textContent = 'Locate';
         locateButton.addEventListener('click', () => {
