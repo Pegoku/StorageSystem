@@ -1,5 +1,3 @@
-
-
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
@@ -57,6 +55,7 @@
     display: block;
       outline: none;
       border: none !important;
+    background-color: #cccccc;
   }
   
   textarea {
@@ -80,12 +79,39 @@
       cursor: pointer;
   } */
   
+  .topRight{
+    position: fixed;
+    top: 10px; /* Adjust the top value as needed */
+    right: 10px; /* Adjust the right value as needed */
+    margin-left: 10px; /* Add margin to separate the buttons */
+  }
   iframe {
       border: none !important;
   }
   
-  
-  
+  /* #centerpoint {
+    top: 50%;
+    left: 50%;
+    align-self: center;
+    position: absolute;
+    align-content: center;
+    transform: translate(-50%, -50%);
+  } */
+
+  /* #dialog {
+      width: 600px;
+
+      height: 400px;
+  } */
+  dialog {
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
   
   /*//////////////////////////////////////////////////////////////////
   [ Utiliti ]*/

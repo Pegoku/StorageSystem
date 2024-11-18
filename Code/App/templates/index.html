@@ -73,28 +73,48 @@
 
 <body>
     <h1>Item List</h1>
+    <button class="topRight" id="addItemDialogButton" >Add Item</button>
+    <!-- <button class="topRight" id="addNodeDialogButton">Add Node</button> -->
+    <div id="centerpoint">
+        <dialog id="addItemDialog">
+            <form id="addItemForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br>
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description"><br>
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category"><br>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity"><br>
+                <label for="node">Node:</label>
+                <input type="number" id="node" name="node"><br>
+                <label for="slot">Slot:</label>
+                <input type="number" id="slot" name="slot"><br>
+                <label for="link">Link:</label>
+                <input type="text" id="link" name="link"><br>
+                <button type="submit">Add Item</button>
+                <button type="button" id="closeDialog">Cancel</button>
+            </form>
+        </dialog>
+    </div>
     <table id="itemTable">
         <thead>
             <tr>
-                <th class="topTable" >Name</th>
-                <th class="topTable" >Description</th>
-                <th class="topTable" >Category</th>
-                <th class="topTable" >Quantity</th>
-                <th class="topTable" >Node</th>
-                <th class="topTable" >Position</th>
-				<th class="topTable" >Delete</th>
-				<th class="topTable" >Locate</th>
-				<!-- <th class="topTable" >Link</th> -->
-
-			</tr>
+                <th class="topTable">Name</th>
+                <th class="topTable">Description</th>
+                <th class="topTable">Category</th>
+                <th class="topTable">Quantity</th>
+                <th class="topTable">Node</th>
+                <th class="topTable">Position</th>
+                <th class="topTable">Delete</th>
+                <th class="topTable">Locate</th>
+                <!-- <th class="topTable">Link</th> -->
+            </tr>
         </thead>
         <tbody>
         </tbody>
     </table>
     
     <script src="../static/script.js"></script>
-
 </body>
-
-
 </html>

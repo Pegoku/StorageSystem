@@ -105,6 +105,83 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         })
         .catch(error => console.error('Error fetching data:', error));
+
+        // const addItemDialogButton = document.getElementById('addItemDialog');
+        // addItemDialogButton.addEventListener('click', () => {
+        //     addItemDialog();
+        // });
+        
+        // const addNodeDialogButton = document.getElementById('addNodeDialog');
+        // addNodeDialogButton.addEventListener('click', () => {
+        //     addNodeDialog();
+        // });
+});
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const addItemDialog = document.getElementById('addItemDialog');
+    const addItemDialogButton = document.getElementById('addItemDialogButton');
+    const closeDialogButton = document.getElementById('closeDialog');
+    const addItemForm = document.getElementById('addItemForm');
+
+    if (addItemDialogButton && addItemDialog && closeDialogButton && addItemForm) {
+        addItemDialogButton.addEventListener('click', () => {
+            addItemDialog.showModal();
+        });
+
+        closeDialogButton.addEventListener('click', () => {
+            addItemDialog.close();
+        });
+
+        addItemForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(addItemForm);
+
+            
+
+            const expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi;
+            const regex = new RegExp(expression);
+            const t = formData.get('link');
+            let link;
+            if (t.match(regex)) {
+              link = formData.get('link');
+            } else {
+              link = 'none';
+            }
+
+            const itemData = {
+                name: formData.get('name'),
+                description: formData.get('description'),
+                category: formData.get('category'),
+                quantity: parseInt(formData.get('quantity')),
+                node: parseInt(formData.get('node')),
+                position: parseInt(formData.get('slot')),
+                url: link
+            };
+
+            console.log('Form Data:', itemData);
+
+            // You can now send the itemData to your server or process it as needed
+            const options = {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(itemData)
+            };
+
+            fetch('http://127.0.0.1:5000/api/additem', options)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    addItemDialog.close(); // Close the dialog after successful submission
+                    window.location.reload();
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        });
+    } else {
+        console.error('One or more elements are not found in the DOM.');
+    }
 });
 
 function quantity_item(id, quantity){
@@ -147,3 +224,4 @@ function deleteItem(id){
         .then(response => console.log(response))
         .catch(err => console.error(err));
 }
+
