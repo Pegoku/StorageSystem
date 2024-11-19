@@ -121,7 +121,13 @@
     color: #e8e6e3;
   }
   
-  
+  .topTableInput{
+    color: #e8e6e3;
+    background-color: #36304a;
+    font-size: medium;
+    font-weight: bold;
+  }
+
   
   /*//////////////////////////////////////////////////////////////////
   [ Table ]*/
