@@ -18,7 +18,7 @@ The storage bins are compatible with Gridfinity 1x4 bins.
 ## Prerequisites
  - [PlatformIO](https://platformio.org) installed on your development environment.
  - ESP32 DevBoard or Controller PCB (WIP)
- - Neopixels (WS2812B) or Indicator PCB
+ - Neopixels (WS2812B) or [Indicator PCB](https://github.com/Pegoku/StorageSystem/tree/master/PCB/Indicators)
  - Some wire
 
 ### API
@@ -45,19 +45,19 @@ git clone https://github.com/Pegoku/StorageSystem.git
 cd StorageSystem/Code/Node
 ```
 2. Install the required libraries and dependencies:
-    ```sh
-    platformio run
-    ```
+```sh
+platformio run
+```
 3. Connect your ESP32 to your computer.
 4. Edit the `include/.env.template` file and rename it to `include/.env` 
 5. Upload the firmware to the ESP32:
-    ```sh
-    platformio upload
-    ```
+```sh
+platformio upload
+```
 6. Open serial to check if installation was successful:
-    ```sh
-    platformio device monitor
-    ```
+```sh
+platformio device monitor
+```
 
 ### Website
 1. Clone the repository:
