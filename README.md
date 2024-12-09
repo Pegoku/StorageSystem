@@ -27,11 +27,8 @@ This is a versatile and customizable Storage System. It has the ability to combi
 <details>
     <summary>Video</summary>
 
-![Video](https://cloud-f5ibtbvt0-hack-club-bot.vercel.app/0video.mp4)
-<video controls>
-    <source src="https://cloud-f5ibtbvt0-hack-club-bot.vercel.app/0video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+[![Video](https://cloud-f5ibtbvt0-hack-club-bot.vercel.app/0video.mp4)](https://cloud-f5ibtbvt0-hack-club-bot.vercel.app/0video.mp4)
+
 </details>
 
 ## API Endpoints
