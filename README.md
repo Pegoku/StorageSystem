@@ -26,7 +26,9 @@ This is a versatile and customizable Storage System. It has the ability to combi
 
 <details>
     <summary>Video</summary>
-    <video controls src="static/Video.mp4" title="Video"></video>
+
+![Add Item Menu](static/Video.mp4)
+<video controls src="static/Video.mp4" title="Video"></video>
 </details>
 
 ## API Endpoints
