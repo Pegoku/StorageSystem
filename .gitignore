@@ -6,3 +6,4 @@ Code/Server/database.db
 *backup*
 .env
 *Dockerfile
+*.FCBak
