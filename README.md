@@ -28,7 +28,7 @@ This is a versatile and customizable Storage System. It has the ability to combi
     <summary>Video</summary>
 
 ![Add Item Menu](static/Video.mp4)
-<video controls src="static/Video.mp4" title="Video"></video>
+<video controls src="https://github.com/Pegoku/StorageSystem/raw/refs/heads/master/static/Video.mp4" title="Video"></video>
 </details>
 
 ## API Endpoints
