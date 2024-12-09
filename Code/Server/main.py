@@ -7,7 +7,7 @@ import sqlite3
 
 
 api = Flask(__name__)
-CORS(api)
+CORS(api, resources={r"/*": {"origins": "*"}})
 # api_list = [
 # {
 #     "name": "screw m3",

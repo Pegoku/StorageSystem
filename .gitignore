@@ -5,4 +5,4 @@ Code/Server/database.db
 .pio
 *backup*
 .env
-server.Dockerfile
+*Dockerfile

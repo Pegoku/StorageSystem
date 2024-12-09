@@ -1,4 +1,4 @@
-# Interactive Storage System
+# Smart Storage System
 
 ## Overview
 This is a versatile and customizable Storage System. It has the ability to combine multiple Storage Systems via the use of ESP32 (a cheap microcontroller) as controllers for the neopixels (indicators). It has a simple but useful WebUI and an API. The storage bins are compatible with Gridfinity 1x4 bins.
@@ -10,6 +10,133 @@ This is a versatile and customizable Storage System. It has the ability to combi
 - [x] **Neopixels**: Dynamic lighting indicators.
 - [x] **Web UI to Manage Storage**: User-friendly web interface for managing the items.
 - [x] **API**: Simple to use API.
+
+## Media
+<details>
+    <summary>Main Website</summary>
+
+![Main Website](static/Main.png)
+</details>
+
+<details>
+    <summary>Add Item Menu</summary>
+
+![Add Item Menu](static/AddItem.png)
+</details>
+
+<details>
+    <summary>Video</summary>
+    <video controls src="static/Video.mp4" title="Video"></video>
+</details>
+
+## API Endpoints
+
+### List Storage Items
+- **Endpoint**: `/api/list`
+- **Method**: `GET`
+- **Description**: Retrieves a list of all storage items. Supports optional query parameters for filtering by category, node, and position.
+- **Query Parameters**:
+  - `category` (optional): Filter items by category.
+  - `node` (optional): Filter items by node.
+  - `position` (optional): Filter items by position.
+
+### Locate Item by ID (GET)
+- **Endpoint**: `/api/locateget`
+- **Method**: `GET`
+- **Description**: Locates an item by its ID and sends a request to the corresponding node to locate the item.
+- **Query Parameters**:
+  - `id` (required): The ID of the item to locate.
+
+### List Nodes
+- **Endpoint**: `/api/nodes`
+- **Method**: `GET`
+- **Description**:  Retrieves a list of all nodes. Supports optional query parameter for filtering by ID.
+- **Query Parameters**:
+    - id (optional): Filter nodes by ID.
+
+### Add Storage Item
+- **Endpoint**: `/api/additem`
+- **Method**: `POST`
+- **Description**: Adds a new storage item to the database.
+- **Request Body** (JSON):
+  ```json
+  {
+    "name": "string",
+    "description": "string",
+    "category": "string",
+    "quantity": "integer",
+    "node": "integer",
+    "position": "integer",
+    "url": "string"
+  }
+  ```
+
+### Add Node
+- **Endpoint**: `/api/addnode`
+- **Method**: `POST`
+- **Description**:  Adds a new node to the database or updates an existing node if the ID already exists.
+- **Request Body** (JSON):
+  ```json
+    {
+      "id": "integer",
+      "ip": "string",
+      "slots": "integer"
+    }
+  ```
+
+### Delete Storage Item
+- **Endpoint**: `/api/delete`
+- **Method**: `POST`
+- **Description**:   Deletes a storage item by its ID.
+- **Request Body** (JSON):
+  ```json
+    {
+      "id": "integer"
+    }
+  ```
+
+### Edit Storage Item
+- **Endpoint**: `/api/edit`
+- **Method**: `POST`
+- **Description**:  Edits an existing storage item by its ID.
+- **Request Body** (JSON):
+  ```json
+    {
+    "id": "integer",
+    "name": "string",
+    "description": "string",
+    "category": "string",
+    "quantity": "integer",
+    "node": "integer",
+    "position": "integer",
+    "url": "string"
+    }   
+  ```
+
+### Move Storage Item
+- **Endpoint**: `/api/move`
+- **Method**: `POST`
+- **Description**:  Moves a storage item to a different node and position.
+- **Request Body** (JSON):
+  ```json
+    {
+    "id": "integer",
+    "node": "integer",
+    "position": "integer"
+    }
+  ```
+
+### Locate Item by ID (POST)
+- **Endpoint**: `/api/locate`
+- **Method**: `POST`
+- **Description**:  Locates an item by its ID and sends a request to the corresponding node to locate the item.
+- **Request Body** (JSON):
+  ```json
+    {
+    "id": "integer"
+    }
+  ```
+
 
 ## Getting Started
 

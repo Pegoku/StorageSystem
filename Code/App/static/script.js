@@ -117,6 +117,8 @@
 //         // });
 // });
 
+var server = "192.168.1.105"; // Server IP address
+
 document.addEventListener('DOMContentLoaded', (event) => {
 
     
@@ -209,7 +211,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
     
 
-    fetch('http://192.168.1.103:5000/api/list') 
+    fetch('http://'+ server+ ':5000/api/list') 
     .then(response => response.json())
     .then(fetchedData => {
         // Sort the data by node > position > name
@@ -286,11 +288,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
             // You can now send the itemData to your server or process it as needed
             const options = {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
+                headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
                 body: JSON.stringify(itemData)
             };
 
-            fetch('http://127.0.0.1:5000/api/additem', options)
+            fetch('http://'+ server+ ':5000/api/additem', options)
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
@@ -309,11 +311,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 function quantity_item(id, quantity){
     const options = {
         method: 'POST',
-        headers: {'Content-Type': 'application/json', 'User-Agent': 'insomnia/10.1.1'},
+        headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
         body: '{"id":' + id + ',"quantity":' + quantity + '}'
       };
       
-      fetch('http://127.0.0.1:5000/api/quantity', options)
+      fetch('http://'+ server+ ':5000/api/quantity', options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
@@ -323,11 +325,11 @@ function quantity_item(id, quantity){
 function locateItem(id){
     const options = {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
         body: '{"id":' + id + '}'
       };
       
-      fetch('http://192.168.1.103:5000/api/locate', options)
+      fetch('http://'+ server+ ':5000/api/locate', options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
@@ -337,11 +339,11 @@ function locateItem(id){
 function deleteItem(id){
     const options = {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
         body: '{"id":' + id + '}'
       };
       
-      fetch('http://127.0.0.1:5000/api/delete', options)
+      fetch('http://'+ server+ ':5000/api/delete', options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
