@@ -179,7 +179,7 @@ This is a versatile and customizable Storage System. It has the ability to combi
 4. Edit the `include/.env.template` file and rename it to `include/.env`.
 5. Upload the firmware to the ESP32:
     ```sh
-    platformio upload
+    platformio run --target upload
     ```
 6. Open the serial monitor to check if the installation was successful:
     ```sh
