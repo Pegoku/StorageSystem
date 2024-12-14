@@ -85,7 +85,7 @@ def get_list():
     category = request.args.get('category')
     node = request.args.get('node')
     position = request.args.get('position')
-    
+    id = request.args.get('id')
     if category:
         storage = [item for item in storage if item[3] == category]
         # categories = [cat.strip() for cat in category.split(',')]
@@ -101,7 +101,14 @@ def get_list():
             position = int(position)
             storage = [item for item in storage if item[6] == position]
         except ValueError:
-            return json.jsonify({"error": "Invalid node value"})
+            return json.jsonify({"error": "Invalid position value"})
+    if id:
+        try:
+            id = int(id)
+            storage = [item for item in storage if item[0] == id]
+        except ValueError:
+            return json.jsonify({"error": "Invalid id value"})
+    
         
     return json.jsonify(storage)
 

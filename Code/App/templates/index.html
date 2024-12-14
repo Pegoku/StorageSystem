@@ -95,6 +95,26 @@
                 <button type="button" id="closeDialog">Cancel</button>
             </form>
         </dialog>
+		<dialog id="editItemDialog">
+			<form id="editItemForm">
+				<label for="name">Name:</label>
+				<input type="text" id="editName" name="editName"><br>
+				<label for="description">Description:</label>
+				<input type="text" id="editDescription" name="editDescription"><br>
+				<label for="category">Category:</label>
+				<input type="text" id="editCategory" name="editCategory"><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="editQuantity" name="editQuantity"><br>
+				<label for="node">Node:</label>
+				<input type="number" id="editNode" name="editNode"><br>
+				<label for="slot">Slot:</label>
+				<input type="number" id="editSlot" name="editSlot"><br>
+				<label for="link">Link:</label>
+				<input type="text" id="editLink" name="editLink"><br>
+				<button type="submit">Edit Item</button>
+				<button type="button" id="closeEditDialog">Cancel</button>
+			</form>
+		</dialog>
     </div>
     <table id="itemTable">
         <thead>
@@ -107,7 +127,7 @@
                 <th class="topTable">Position</th>
                 <th class="topTable">Delete</th>
                 <th class="topTable">Locate</th>
-                <!-- <th class="topTable">Link</th> -->
+                <th class="topTable">Edit</th>
             </tr>
         </thead>
         <tbody>

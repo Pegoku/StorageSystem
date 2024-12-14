@@ -131,8 +131,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Clear the existing table rows
         tableBody.innerHTML = '';
 
+        console.log(data)
         // Filter and display the items
         data.forEach(item => {
+            // console.log(item.length)
             if (!categoryInput || item[3].toLowerCase().includes(categoryInput.value.toLowerCase())) {
 
                 if (!nameInput || item[1].toLowerCase().includes(nameInput.value.toLowerCase())) {
@@ -181,7 +183,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 });
         
                 // Add "Delete" button
-                const deleteCell = row.insertCell(item.length - 2);
+                const deleteCell = row.insertCell(6);
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Delete';
                 deleteButton.addEventListener('click', () => {
@@ -194,7 +196,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 deleteCell.appendChild(deleteButton);
         
                 // Add "Locate" button
-                const locateCell = row.insertCell(item.length - 1);
+                const locateCell = row.insertCell(7);
                 const locateButton = document.createElement('button');
                 locateButton.textContent = 'Locate';
                 locateButton.addEventListener('click', () => {
@@ -203,6 +205,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     locateItem(item[0]);
                 });
                 locateCell.appendChild(locateButton);
+
+                // Add "Edit" button
+                const editCell = row.insertCell(8);
+                const editButton = document.createElement('button');
+                editButton.textContent = 'Edit';
+                editButton.addEventListener('click', () => {
+                    // Add edit functionality here
+                    // console.log('Edit button clicked for item:', item[0]);
+                    // editItem(item[0]);
+                    editItem(item[0]);
+                });
+                editCell.appendChild(editButton);
 
             }
         }
@@ -306,6 +320,98 @@ document.addEventListener('DOMContentLoaded', (event) => {
     } else {
         console.error('One or more elements are not found in the DOM.');
     }
+
+});
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    function editItem(id){
+        const editItemDialog = document.getElementById('editItemDialog');
+        const closeEditDialogButton = document.getElementById('closeEditDialog');
+        const editItemForm = document.getElementById('editItemForm');
+
+        
+        if (editItemDialog && closeEditDialogButton && editItemForm) {
+        editItemDialog.showModal();
+    
+        closeEditDialogButton.addEventListener('click', () => {
+            editItemDialog.close();
+        });
+        // set placeholder text to current values
+        fetch('http://'+ server+ ':5000/api/list?id=' + id)
+        .then(response => response.json())
+        .then(data => {
+
+            editItemForm.elements['editName'].placeholder = data[0][1];
+            editItemForm.elements['editDescription'].placeholder = data[0][2];
+            editItemForm.elements['editCategory'].placeholder = data[0][3];
+            editItemForm.elements['editQuantity'].placeholder = data[0][4];
+            editItemForm.elements['editNode'].placeholder = data[0][5];
+            editItemForm.elements['editSlot'].placeholder = data[0][6];
+            editItemForm.elements['editLink'].placeholder = data[0][7];
+        })
+        .catch(error => console.error('Error fetching data:', error));
+
+        editItemForm.addEventListener('submit', (event) => {
+        // event.preventDefault(); // Prevent the default form submission
+
+        const formData = new FormData(editItemForm);
+
+        // const expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi;
+        // const regex = new RegExp(expression);
+        // const t = formData.get('editLink');
+        // let link;
+
+        // if (t.match(regex)) {
+        //     link = formData.get('editLink');
+        // } else {
+        //     link = 'none';
+        // }
+        // print(formData);
+
+        const itemData = {
+            id: id,
+            name: formData.get('editName') !== '' ? formData.get('editName') : editItemForm.elements['editName'].placeholder,
+            description: formData.get('editDescription') !== '' ? formData.get('editDescription') : editItemForm.elements['editDescription'].placeholder,
+            category: formData.get('editCategory') !== '' ? capitalizeFirstLetter(formData.get('editCategory')) : capitalizeFirstLetter(editItemForm.elements['editCategory'].placeholder),
+            quantity: formData.get('editQuantity') !== '' ? parseInt(formData.get('editQuantity')) : parseInt(editItemForm.elements['editQuantity'].placeholder),
+            node: formData.get('editNode') !== '' ? parseInt(formData.get('editNode')) : parseInt(editItemForm.elements['editNode'].placeholder),
+            position: formData.get('editSlot') !== '' ? parseInt(formData.get('editSlot')) : parseInt(editItemForm.elements['editSlot'].placeholder),
+            url: formData.get('editLink') !== '' ? formData.get('editLink') : editItemForm.elements['editLink'].placeholder
+        };
+        // print(formData);
+        // console.log(formData);
+        // console.log(itemData);
+        // console.log(formData.get('editName'))
+        // console.log(JSON.stringify(itemData));
+        // console.log(data);
+        // print(itemData);
+        // print(JSON.stringify(itemData));
+        // console.log(itemData);
+        const options = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'},
+            body: JSON.stringify(itemData)
+          };
+          
+          fetch('http://'+ server+ ':5000/api/edit', options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+            // print('Success:', data);
+            editItemDialog.close(); // Close the dialog after successful submission
+            window.location.reload();
+
+        
+    });
+        } else {
+            console.error('One or more elements are not found in the DOM.');
+            console.log('editItemDialog:', editItemDialog);
+            console.log('closeEditDialogButton:', closeEditDialogButton);
+            console.log('editItemForm:', editItemForm);
+        }
+    }
+
+    window.editItem = editItem;
 });
 
 function quantity_item(id, quantity){
@@ -335,6 +441,7 @@ function locateItem(id){
         .catch(err => console.error(err));
 
 }
+
 
 function deleteItem(id){
     const options = {

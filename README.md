@@ -41,7 +41,7 @@ This is a versatile and customizable Storage System. It has the ability to combi
   - `category` (optional): Filter items by category.
   - `node` (optional): Filter items by node.
   - `position` (optional): Filter items by position.
-
+  - `id` (optional): Filter items by ID:
 ### Locate Item by ID (GET)
 - **Endpoint**: `/api/locateget`
 - **Method**: `GET`
