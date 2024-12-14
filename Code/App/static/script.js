@@ -126,6 +126,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const nameInput = document.getElementById('nameInput');
     const tableBody = document.getElementById('itemTable').getElementsByTagName('tbody')[0];
 
+    const expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi;
+    const regex = new RegExp(expression);
     // Function to update the table based on the category input
     function updateTable() {
         // Clear the existing table rows
@@ -140,7 +142,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 if (!nameInput || item[1].toLowerCase().includes(nameInput.value.toLowerCase())) {
 
                 const row = tableBody.insertRow();
-                for (let i = 1; i < item.length; i++) {
+                for (let i = 1; i < item.length - 16; i++) { // -16 to remove the slots info
+                                        
                     if (i === 4) {
                         const cell = row.insertCell(i - 1);
                         const input = document.createElement('input');
@@ -153,14 +156,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     } else {
                         
                         if (i === 1) {
-                            if (item[7] !== "none") {
+                            if (item[7] === "none" || item[7] === null || item[7] === "") {
+                                row.insertCell(i - 1).textContent = item[i];
+                            } else {
                                 const cell = row.insertCell(i - 1);
                                 const link = document.createElement('a');
                                 link.href = item[7];
                                 link.textContent = item[i];
                                 cell.appendChild(link);
-                            } else {
-                                row.insertCell(i - 1).textContent = item[i];
                             }
                         } else {
                             if (i === 3) {
@@ -460,3 +463,49 @@ function capitalizeFirstLetter(string) {
     if (!string) return string;
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const slotDialog = document.getElementById('slotDialog');
+    const slotButton = document.getElementById('slotButton');
+    const slotForm = document.getElementById('slotForm');
+    const closeslotDialog = document.getElementById('closeslotDialog');
+
+
+    if (slotButton && slotDialog && slotForm && closeslotDialog) {
+        slotButton.addEventListener('click', () => {
+            slotDialog.showModal();
+        });
+    
+        closeslotDialog.addEventListener('click', () => {
+            slotDialog.close();
+        });
+
+        slotForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(slotForm);
+            listSlots = [];
+
+            console.log('Form Data:', formData);
+            
+            for (let i of formData.keys()) {
+
+                if (formData.get(i) === 'on') {
+                    
+                    slot = i.replace('checkbox', ''); 
+                    // remove the checkbox from the string
+                    console.log(slot + formData.get(i));
+                    listSlots.push(slot);
+                }    
+                // console.log( i + formData.get(i));
+            }
+            console.log(listSlots);
+
+            
+            slotDialog.close(); 
+        });
+    } else {
+        console.error('One or more elements are not found in the DOM.');
+    }
+
+});

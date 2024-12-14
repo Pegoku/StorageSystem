@@ -69,7 +69,9 @@ This is a versatile and customizable Storage System. It has the ability to combi
     "quantity": "integer",
     "node": "integer",
     "position": "integer",
-    "url": "string"
+    "url": "string",
+    "slots": "array"
+
   }
   ```
 
@@ -82,7 +84,7 @@ This is a versatile and customizable Storage System. It has the ability to combi
     {
       "id": "integer",
       "ip": "string",
-      "slots": "integer"
+      "positions": "integer"
     }
   ```
 

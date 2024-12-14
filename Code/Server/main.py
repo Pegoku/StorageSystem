@@ -40,6 +40,9 @@ CORS(api, resources={r"/*": {"origins": "*"}})
 
 # DB structure item, description, category, quantity, node, position, url (optional)
 
+
+## Possible way: add to Storage table 16 slots and true if there, false if not. Messy but could work
+
 def init_db():
     conn = sqlite3.connect('database.db')
     c = conn.cursor()
@@ -51,15 +54,50 @@ def init_db():
         quantity INTEGER,
         node INTEGER,
         position INTEGER,
-        url TEXT)""")
+        url TEXT,
+        slot_1 BOOLEAN,
+        slot_2 BOOLEAN,
+        slot_3 BOOLEAN,
+        slot_4 BOOLEAN,
+        slot_5 BOOLEAN,
+        slot_6 BOOLEAN,
+        slot_7 BOOLEAN,
+        slot_8 BOOLEAN,
+        slot_9 BOOLEAN,
+        slot_10 BOOLEAN,
+        slot_11 BOOLEAN,
+        slot_12 BOOLEAN,
+        slot_13 BOOLEAN,
+        slot_14 BOOLEAN,
+        slot_15 BOOLEAN,
+        slot_16 BOOLEAN)""")
+    
     conn.commit()
     
     c.execute("""CREATE TABLE IF NOT EXISTS Nodes(
         id INTEGER PRIMARY KEY,
         ip TEXT,
-        slots INTEGER)""")
+        positions INTEGER)""")
     conn.commit()
     
+    # c.execute("""CREATE TABLE IF NOT EXISTS listpositions(
+    #     1 INTEGER,
+    #     2 INTEGER,
+    #     3 INTEGER,
+    #     4 INTEGER,
+    #     5 INTEGER,
+    #     6 INTEGER,
+    #     7 INTEGER,
+    #     8 INTEGER,
+    #     9 INTEGER,
+    #     10 INTEGER,
+    #     11 INTEGER,
+    #     12 INTEGER,
+    #     13 INTEGER,
+    #     14 INTEGER,
+    #     15 INTEGER,
+    #     16 INTEGER""")
+    # )
     conn.close()
 
 def listStorage():
@@ -142,7 +180,7 @@ def locate_get_item():
         
         url = "http://" + ip + ":4444/locate"
         
-        payload = {"slot": position}
+        payload = {"position": position}
         headers = {'Content-Type': 'application/json'}
         
         nodeResponse = requests.post(url, data=json.dumps(payload), headers=headers)
@@ -157,8 +195,33 @@ def add_item():
     item = request.json
     conn = sqlite3.connect('database.db')
     c = conn.cursor()
-    c.execute("INSERT INTO Storage (item, description, category, quantity, node , position, url) VALUES (?, ?, ?, ?, ?, ?, ?)", 
-        (item['name'], item['description'], item['category'], item['quantity'], item['node'], item['position'], item['url']))
+    slots = [False] * 16
+    slotsList = [int(slot) for slot in item['slots'].split(',')] # Convert a, b, c, d to [a, b, c, d]
+    for slot in slotsList:
+        slots[slot - 1] = True
+    
+    if 'name' not in item:
+        return json.jsonify({"error": "name is required"})
+    if 'description' not in item:
+        return json.jsonify({"error": "description is required"})
+    if 'category' not in item:
+        return json.jsonify({"error": "category is required"})
+    if 'quantity' not in item:
+        return json.jsonify({"error": "quantity is required"})
+    if 'node' not in item:
+        return json.jsonify({"error": "node is required"})
+    if 'position' not in item:
+        return json.jsonify({"error": "position is required"})
+    if 'slots' not in item:
+        return json.jsonify({"error": "slots is required"})
+    
+    
+    
+    if item['url'] == '' or item['url'] == 'null' or 'url' not in item:
+        item['url'] = None
+
+    c.execute("INSERT INTO Storage (item, description, category, quantity, node, position, url, slot_1, slot_2, slot_3, slot_4, slot_5, slot_6, slot_7, slot_8, slot_9, slot_10, slot_11, slot_12, slot_13, slot_14, slot_15, slot_16) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", 
+        (item['name'], item['description'], item['category'], item['quantity'], item['node'], item['position'], item['url'], *slots))
     conn.commit()
     conn.close()
     return json.jsonify({"success": True})
@@ -170,29 +233,29 @@ def add_node():
         return json.jsonify({"error": "id is required"})
     if 'ip' not in item:
         return json.jsonify({"error": "ip is required"})
-    if 'slots' not in item:
-        return json.jsonify({"error": "slots is required"})
+    if 'positions' not in item:
+        return json.jsonify({"error": "positions is required"})
     try:
         item['id'] = int(item['id'])
-        item['slots'] = int(item['slots'])
+        item['positions'] = int(item['positions'])
     except ValueError:
-        return json.jsonify({"error": "Invalid id or slots value"})
+        return json.jsonify({"error": "Invalid id or positions value"})
     
     nodes = listNodes()
     
     if any(i[0] == item['id'] for i in nodes):
         conn = sqlite3.connect('database.db')
         c = conn.cursor()
-        c.execute("UPDATE Nodes set ip = ?, slots = ? WHERE id = ?", 
-            (item['ip'], item['slots'], item['id']))
+        c.execute("UPDATE Nodes set ip = ?, positions = ? WHERE id = ?", 
+            (item['ip'], item['positions'], item['id']))
         conn.commit()
         conn.close()
         return json.jsonify({"error": "Item with id already exists, updated anyway"})
     
     conn = sqlite3.connect('database.db')
     c = conn.cursor()
-    c.execute("INSERT INTO Nodes (id, ip, slots) VALUES (?, ?, ?)", 
-        (item['id'], item['ip'], item['slots']))
+    c.execute("INSERT INTO Nodes (id, ip, positions) VALUES (?, ?, ?)", 
+        (item['id'], item['ip'], item['positions']))
     conn.commit()
     conn.close()
     return json.jsonify({"success": True})
@@ -312,7 +375,7 @@ def locate_item():
         
         url = "http://" + ip + ":4444/locate"
         
-        payload = {"slot": position}
+        payload = {"position": position}
         headers = {'Content-Type': 'application/json'}
         
         nodeResponse = requests.post(url, data=json.dumps(payload), headers=headers)
@@ -322,6 +385,13 @@ def locate_item():
         else:
             return json.jsonify({"error": True})
         # return json.jsonify({"node": location[0], "position": location[1]})
+
+@api.route('/api/displaySlots', methods=['POST'])
+def display_slots():
+    item = requests.json
+    if 'id' not in item:
+        return json.jsonify({"error": "id is required"})
+    
 
 if __name__ == '__main__':
     init_db()

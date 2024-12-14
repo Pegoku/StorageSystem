@@ -73,6 +73,7 @@
 <body>
     <h1>Item List</h1>
     <button class="topRight" id="addItemDialogButton" >Add Item</button>
+	<!-- <button class="topRight" id="testButton">TestFeature</button> -->
     <!-- <button class="topRight" id="addNodeDialogButton">Add Node</button> -->
     <div id="centerpoint">
         <dialog id="addItemDialog">
@@ -91,6 +92,7 @@
                 <input type="number" id="slot" name="slot"><br>
                 <label for="link">Link:</label>
                 <input type="text" id="link" name="link"><br>
+				
                 <button type="submit">Add Item</button>
                 <button type="button" id="closeDialog">Cancel</button>
             </form>
@@ -115,6 +117,48 @@
 				<button type="button" id="closeEditDialog">Cancel</button>
 			</form>
 		</dialog>
+		<dialog id="slotDialog">
+            <form id="slotForm">
+				<table>
+					<tbody>
+						<tr>
+							<td><input type="checkbox" name="checkbox1"></td>
+							<td><input type="checkbox" name="checkbox9"></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="checkbox2"></td>
+							<td><input type="checkbox" name="checkbox10"></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="checkbox3"></td>
+							<td><input type="checkbox" name="checkbox11"></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="checkbox4"></td>
+							<td><input type="checkbox" name="checkbox12"></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="checkbox5"></td>
+							<td><input type="checkbox" name="checkbox13"></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="checkbox6"></td>
+							<td><input type="checkbox" name="checkbox14"></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="checkbox7"></td>
+							<td><input type="checkbox" name="checkbox15"></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="checkbox8"></td>
+							<td><input type="checkbox" name="checkbox16"></td>
+						</tr>
+					</tbody>
+				</table>
+				<button type="submit">Submit</button>
+				<button type="button" id="closeslotDialog">Cancel</button>
+			</form>
+        </dialog>
     </div>
     <table id="itemTable">
         <thead>
