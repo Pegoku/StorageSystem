@@ -1,4 +1,4 @@
-from flask import Flask, request, json, Response, jsonify
+from flask import Flask, request, json, Response
 from flask_cors import CORS
 
 import requests
@@ -35,7 +35,6 @@ CORS(api, resources={r"/*": {"origins": "*"}})
 #     "node": 2,
 #     "position": 3,
 #     "url": "ima5555"
-#     "slots": "1, 2, 3, 4"
 # }
 # ]
 
@@ -56,7 +55,22 @@ def init_db():
         node INTEGER,
         position INTEGER,
         url TEXT,
-        slot TEXT)""")
+        slot_1 BOOLEAN,
+        slot_2 BOOLEAN,
+        slot_3 BOOLEAN,
+        slot_4 BOOLEAN,
+        slot_5 BOOLEAN,
+        slot_6 BOOLEAN,
+        slot_7 BOOLEAN,
+        slot_8 BOOLEAN,
+        slot_9 BOOLEAN,
+        slot_10 BOOLEAN,
+        slot_11 BOOLEAN,
+        slot_12 BOOLEAN,
+        slot_13 BOOLEAN,
+        slot_14 BOOLEAN,
+        slot_15 BOOLEAN,
+        slot_16 BOOLEAN)""")
     
     conn.commit()
     
@@ -132,19 +146,8 @@ def get_list():
             storage = [item for item in storage if item[0] == id]
         except ValueError:
             return json.jsonify({"error": "Invalid id value"})
-
-    # print(storage) # [(1, 'aaa', '22', 'screw', 50, 1, 5, 'https://pegoku.com', '1, 2, 9, 10'), (2, 'bbbb', '33', 'screw', 50, 1, 6, 'https://pegoku.com', '1, 2, 5, 6')]
-    storageTemp = []
-    # print(storage)
-    for item in storage:
-        item = list(item)
-        # print(item)
-        if item[8] != "":
-            item[8] = list(map(int, item[8].split(', ')))
-            item = tuple(item)
-        storageTemp.append(item)
-    storage = storageTemp
-    # print (storage)        
+    
+        
     return json.jsonify(storage)
 
 @api.route('/api/locateget', methods=['GET'])
@@ -192,9 +195,10 @@ def add_item():
     item = request.json
     conn = sqlite3.connect('database.db')
     c = conn.cursor()
-
-    # Convert [a, b, c, d] to "a, b, c, d"
-    slots = ', '.join([str(i) for i in item['slots']])
+    slots = [False] * 16
+    slotsList = item['slots'] # [int(slot) for slot in item['slots'].split(',')] # Convert a, b, c, d to [a, b, c, d]
+    for slot in slotsList:
+        slots[int(slot) - 1] = True
     
     if 'name' not in item:
         return json.jsonify({"error": "name is required"})
@@ -216,8 +220,8 @@ def add_item():
     if item['url'] == '' or item['url'] == 'null' or 'url' not in item:
         item['url'] = None
 
-    c.execute("INSERT INTO Storage (item, description, category, quantity, node, position, url, slot) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", 
-        (item['name'], item['description'], item['category'], item['quantity'], item['node'], item['position'], item['url'], slots))
+    c.execute("INSERT INTO Storage (item, description, category, quantity, node, position, url, slot_1, slot_2, slot_3, slot_4, slot_5, slot_6, slot_7, slot_8, slot_9, slot_10, slot_11, slot_12, slot_13, slot_14, slot_15, slot_16) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", 
+        (item['name'], item['description'], item['category'], item['quantity'], item['node'], item['position'], item['url'], *slots))
     conn.commit()
     conn.close()
     return json.jsonify({"success": True})
@@ -246,7 +250,7 @@ def add_node():
             (item['ip'], item['positions'], item['id']))
         conn.commit()
         conn.close()
-        return json.jsonify({"warning": "Item with id already exists, updated anyway"})
+        return json.jsonify({"error": "Item with id already exists, updated anyway"})
     
     conn = sqlite3.connect('database.db')
     c = conn.cursor()
@@ -275,9 +279,6 @@ def delete_item():
 @api.route('/api/edit', methods=['POST'])
 def edit_item():
     item = request.json
-    
-    slots = ', '.join([str(i) for i in item['slots']])
-    
     if 'id' not in item:
         return json.jsonify({"error": "id is required"})
     else:
@@ -286,8 +287,8 @@ def edit_item():
             return json.jsonify({"error": "Item with id not found"})
         conn = sqlite3.connect('database.db')
         c = conn.cursor()
-        c.execute("UPDATE Storage SET item = ?, description = ?, category = ?, quantity = ?, node = ?, position = ?, url = ?, slot = ? WHERE id = ?", 
-            (item['name'], item['description'], item['category'], item['quantity'], item['node'], item['position'], item['url'], slots, item['id']))
+        c.execute("UPDATE Storage SET item = ?, description = ?, category = ?, quantity = ?, node = ?, position = ?, url = ? WHERE id = ?", 
+            (item['name'], item['description'], item['category'], item['quantity'], item['node'], item['position'], item['url'], item['id']))
         conn.commit()
         conn.close()
         return json.jsonify({"success": True})
@@ -362,15 +363,11 @@ def locate_item():
             return json.jsonify({"error": "Item with id not found"})
         conn = sqlite3.connect('database.db')
         c = conn.cursor()
-        c.execute("SELECT node, position, slot FROM Storage WHERE id = ?", (item['id'],))
+        c.execute("SELECT node, position FROM Storage WHERE id = ?", (item['id'],))
         location = c.fetchone()
         # conn.close()
         node = location[0]
         position = location[1]
-        if location[2] != "":
-            slot = list(map(int, location[2].split(', ')))
-        else:
-            slot = []
         
         c.execute("SELECT ip FROM Nodes WHERE id = ?", (node,))
         ip = c.fetchone()[0]
@@ -378,7 +375,7 @@ def locate_item():
         
         url = "http://" + ip + ":4444/locate"
         
-        payload = {"position": position, "slot": slot}
+        payload = {"position": position}
         headers = {'Content-Type': 'application/json'}
         
         nodeResponse = requests.post(url, data=json.dumps(payload), headers=headers)
@@ -389,11 +386,11 @@ def locate_item():
             return json.jsonify({"error": True})
         # return json.jsonify({"node": location[0], "position": location[1]})
 
-# @api.route('/api/displaySlots', methods=['POST'])
-# def display_slots():
-#     item = requests.json
-#     if 'id' not in item:
-#         return json.jsonify({"error": "id is required"})
+@api.route('/api/displaySlots', methods=['POST'])
+def display_slots():
+    item = requests.json
+    if 'id' not in item:
+        return json.jsonify({"error": "id is required"})
     
 
 if __name__ == '__main__':

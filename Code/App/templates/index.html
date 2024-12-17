@@ -88,30 +88,33 @@
                 <input type="number" id="quantity" name="quantity"><br>
                 <label for="node">Node:</label>
                 <input type="number" id="node" name="node"><br>
-                <label for="slot">Slot:</label>
-                <input type="number" id="slot" name="slot"><br>
+                <label for="position">Position:</label>
+                <input type="number" id="position" name="position"><br>
+				<label>Slots:</label>
+				<button type="button" id="slotDialogButton">Select Slots</button><br><br>
                 <label for="link">Link:</label>
                 <input type="text" id="link" name="link"><br>
-				
                 <button type="submit">Add Item</button>
                 <button type="button" id="closeDialog">Cancel</button>
             </form>
         </dialog>
 		<dialog id="editItemDialog">
 			<form id="editItemForm">
-				<label for="name">Name:</label>
+				<label for="editName">Name:</label>
 				<input type="text" id="editName" name="editName"><br>
 				<label for="description">Description:</label>
-				<input type="text" id="editDescription" name="editDescription"><br>
+				<input type="editDescription" id="editDescription" name="editDescription"><br>
 				<label for="category">Category:</label>
-				<input type="text" id="editCategory" name="editCategory"><br>
-				<label for="quantity">Quantity:</label>
+				<input type="editCategory" id="editCategory" name="editCategory"><br>
+				<label for="editQuantity">Quantity:</label>
 				<input type="number" id="editQuantity" name="editQuantity"><br>
-				<label for="node">Node:</label>
+				<label for="editNode">Node:</label>
 				<input type="number" id="editNode" name="editNode"><br>
-				<label for="slot">Slot:</label>
-				<input type="number" id="editSlot" name="editSlot"><br>
-				<label for="link">Link:</label>
+				<label for="editPosition">Position:</label>
+				<input type="number" id="editPosition" name="editPosition"><br>
+				<label>Slots:</label>
+				<button type="button" id="editslotDialogButton">Select Slots</button><br><br>
+				<label for="editLink">Link:</label>
 				<input type="text" id="editLink" name="editLink"><br>
 				<button type="submit">Edit Item</button>
 				<button type="button" id="closeEditDialog">Cancel</button>
@@ -119,41 +122,87 @@
 		</dialog>
 		<dialog id="slotDialog">
             <form id="slotForm">
-				<table>
-					<tbody>
+				<table id="slotTable">
+					<tbody class="slotGroup">
 						<tr>
 							<td><input type="checkbox" name="checkbox1"></td>
-							<td><input type="checkbox" name="checkbox9"></td>
-						</tr>
-						<tr>
 							<td><input type="checkbox" name="checkbox2"></td>
-							<td><input type="checkbox" name="checkbox10"></td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" name="checkbox3"></td>
-							<td><input type="checkbox" name="checkbox11"></td>
 						</tr>
 						<tr>
 							<td><input type="checkbox" name="checkbox4"></td>
-							<td><input type="checkbox" name="checkbox12"></td>
+							<td><input type="checkbox" name="checkbox3"></td>
 						</tr>
+					</tbody>
+					<tbody class="slotGroup">
 						<tr>
 							<td><input type="checkbox" name="checkbox5"></td>
-							<td><input type="checkbox" name="checkbox13"></td>
-						</tr>
-						<tr>
 							<td><input type="checkbox" name="checkbox6"></td>
-							<td><input type="checkbox" name="checkbox14"></td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" name="checkbox7"></td>
-							<td><input type="checkbox" name="checkbox15"></td>
 						</tr>
 						<tr>
 							<td><input type="checkbox" name="checkbox8"></td>
-							<td><input type="checkbox" name="checkbox16"></td>
+							<td><input type="checkbox" name="checkbox7"></td>
 						</tr>
 					</tbody>
+					<tbody class="slotGroup">
+						<tr>
+							<td><input type="checkbox" name="checkbox9"></td>
+							<td><input type="checkbox" name="checkbox10"></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="checkbox12"></td>
+							<td><input type="checkbox" name="checkbox11"></td>
+						</tr>
+					</tbody>
+					<tbody class="slotGroup">
+						<tr>
+							<td><input type="checkbox" name="checkbox13"></td>
+							<td><input type="checkbox" name="checkbox14"></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="checkbox16"></td>
+							<td><input type="checkbox" name="checkbox15"></td>
+						</tr>
+					</tbody>
+					<!-- <tbody class="slotGroup">
+						<tr>
+							<td><input type="checkbox" name="checkbox1"></td>
+							<td><input type="checkbox" name="checkbox16"></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="checkbox2"></td>
+							<td><input type="checkbox" name="checkbox15"></td>
+						</tr>
+					</tbody>
+					<tbody class="slotGroup">
+						<tr>
+							<td><input type="checkbox" name="checkbox3"></td>
+							<td><input type="checkbox" name="checkbox14"></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="checkbox4"></td>
+							<td><input type="checkbox" name="checkbox13"></td>
+						</tr>
+					</tbody>
+					<tbody class="slotGroup">
+						<tr>
+							<td><input type="checkbox" name="checkbox5"></td>
+							<td><input type="checkbox" name="checkbox12"></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="checkbox6"></td>
+							<td><input type="checkbox" name="checkbox11"></td>
+						</tr>
+					</tbody>
+					<tbody class="slotGroup">
+						<tr>
+							<td><input type="checkbox" name="checkbox7"></td>
+							<td><input type="checkbox" name="checkbox10"></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" name="checkbox8"></td>
+							<td><input type="checkbox" name="checkbox9"></td>
+						</tr>
+					</tbody> -->
 				</table>
 				<button type="submit">Submit</button>
 				<button type="button" id="closeslotDialog">Cancel</button>

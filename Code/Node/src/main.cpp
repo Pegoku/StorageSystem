@@ -7,35 +7,47 @@
 
 #include <.env>
 
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(slots, 15, NEO_GRB + NEO_KHZ800);
-
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(positions, 15, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel slotLed = Adafruit_NeoPixel(16, 4, NEO_GRB + NEO_KHZ800);
 WebServer server(4444);
 
-JsonDocument jsonDocument;
+const size_t capacity = JSON_OBJECT_SIZE(10) + 200;
+StaticJsonDocument<capacity> jsonDocument;
+
 char buffer[1024];
 
-void locate(int slot)
+void locate(int position, JsonArray slotArray)
 {
-    slot = slot - 1;
+    position = position - 1;
 
-    if (slot < 0 || slot >= slots)
+    if (position < 0 || position >= positions)
     {
-        Serial.println("Invalid slot");
-        server.send(400, "text/plain", "Invalid slot");
+        Serial.println("Invalid position");
+        server.send(400, "text/plain", "Invalid position");
         return;
     }
     else
     {
         server.send(200, "application/json", "{\"success\": true}");
 
-        Serial.println("Locating slot " + String(slot));
+        Serial.println("Locating position " + String(position));
         strip.clear();
-        strip.setPixelColor(slot, strip.Color(5, 5, 5));
+        strip.setPixelColor(position, strip.Color(5, 5, 5));
         strip.show();
+        String slotArrayStr;
+        serializeJson(slotArray, slotArrayStr);
+        Serial.println("Locating slots " + slotArrayStr);
+        for (size_t i = 0; i < slotArray.size(); i++)
+        {
+            slotLed.setPixelColor(slotArray[i].as<int>() - 1, slotLed.Color(5, 5, 5));
+        }
+        slotLed.show();
+
         delay(5000);
         strip.clear();
         strip.show();
-
+        slotLed.clear();
+        slotLed.show();
     }
 }
 
@@ -52,9 +64,23 @@ void handlePost()
     String payload = server.arg("plain");
     deserializeJson(jsonDocument, payload);
     Serial.println("Deserialized JSON");
+    Serial.println(payload);
 
-    int slot = jsonDocument["slot"];
-    locate(slot);
+    int position = jsonDocument["position"];
+    JsonArray slotJsonArray = jsonDocument["slot"].as<JsonArray>();
+    int slotArray[slotJsonArray.size()];
+    for (size_t i = 0; i < slotJsonArray.size(); i++)
+    {
+        slotArray[i] = slotJsonArray[i];
+    }
+
+    Serial.println(jsonDocument["position"].as<int>());
+    for (size_t i = 0; i < slotJsonArray.size(); i++)
+    {
+        Serial.println(slotArray[i]);
+    }
+
+    locate(position, slotJsonArray);
 }
 
 void setupServer()
@@ -86,7 +112,7 @@ void setup()
     Serial.println(WiFi.localIP());
     delay(1000);
 
-    String nodeInfo = "{\"id\": " + String(node) + ", \"ip\": \"" + WiFi.localIP().toString() + "\", \"slots\": " + String(slots) + "}";
+    String nodeInfo = "{\"id\": " + String(node) + ", \"ip\": \"" + WiFi.localIP().toString() + "\", \"positions\": " + String(positions) + "}";
     if (WiFi.status() == WL_CONNECTED)
     {
         HTTPClient http;
@@ -111,14 +137,14 @@ void setup()
                 }
                 else
                 {
-                    Serial.println("Failed to add node");
+                    Serial.println("Check logs. Possible error in adding node");
                     // while (true)
                     // {
                     //     Serial.println(payload);
-                    //     strip.fill(strip.Color(255, 0, 0), 0, slots);
+                    //     strip.fill(strip.Color(255, 0, 0), 0, positions);
                     //     strip.show();
                     //     delay(500);
-                    //     strip.fill(strip.Color(0, 0, 0), 0, slots);
+                    //     strip.fill(strip.Color(0, 0, 0), 0, positions);
                     //     strip.show();
                     //     delay(500);
                     // }

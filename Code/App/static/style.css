@@ -79,6 +79,8 @@
       cursor: pointer;
   } */
   
+
+
   .topRight{
     position: fixed;
     top: 10px; /* Adjust the top value as needed */
@@ -319,7 +321,9 @@
     table tbody tr td:nth-child(8):before {
       content: "Locate";
     }
-  
+    table tbody tr td:nth-child(9):before {
+      content: "Edit";
+    }
     .column4,
     .column5,
     .column6 {
@@ -345,4 +349,9 @@
       padding-left: 15px;
       padding-right: 15px;
     }
+  }
+
+  .slotGroup{
+    border: 3px solid black; /* Thick border */
+    margin-bottom: 10px; /* Optional: space between groups */
   }
