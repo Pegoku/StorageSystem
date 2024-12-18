@@ -5,5 +5,4 @@ Code/Server/database.db
 .pio
 *backup*
 .env
-*Dockerfile
 *.FCBak

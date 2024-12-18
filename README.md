@@ -150,7 +150,7 @@ This is a versatile and customizable Storage System. It has the ability to combi
 - Neopixels (WS2812B) or [Indicator PCB](https://github.com/Pegoku/StorageSystem/tree/master/PCB/Indicators).
 - Some wire.
 
-### API
+### API 
 1. Clone the repository:
     ```sh
     git clone https://github.com/Pegoku/StorageSystem.git
@@ -167,11 +167,25 @@ This is a versatile and customizable Storage System. It has the ability to combi
     python3 main.py
     ```
 
+### API (Docker)
+1. Clone the repository:
+  ```sh
+  git clone https://github.com/Pegoku/StorageSystem.git
+  cd StorageSystem/Code/Server
+  ```
+2. Build and run the Docker container:
+  ```sh
+  docker buildx build -t storagesystem:server -f server.Dockerfile .
+  docker run -p 5000:5000 -v ./database.db:/app/database.db storagesystem:server
+  ```
+3. The API should now be running and accessible at `http://localhost:5000`.
+
+
 ### ESP32
 1. Clone the repository:
     ```sh
     git clone https://github.com/Pegoku/StorageSystem.git
-    cd StorageSystem/Code/Node
+    cd StorageSystem
     ```
 2. Install the required libraries and dependencies:
     ```sh
@@ -204,6 +218,19 @@ This is a versatile and customizable Storage System. It has the ability to combi
     ```sh
     python3 main.py
     ```
+
+### Website (Docker)
+1. Clone the repository:
+  ```sh
+  git clone https://github.com/Pegoku/StorageSystem.git
+  cd StorageSystem
+  ```
+2. Build and run the Docker container:
+  ```sh
+  docker buildx build -t storagesystem:app -f app.Dockerfile .
+  docker run -p 5001:5001 storagesystem:app
+  ```
+3. The website should now be running and accessible at `http://localhost:5001`.
 
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your changes.
