@@ -54,7 +54,7 @@ This is a versatile and customizable Storage System. It has the ability to combi
 - **Method**: `GET`
 - **Description**:  Retrieves a list of all nodes. Supports optional query parameter for filtering by ID.
 - **Query Parameters**:
-    - id (optional): Filter nodes by ID.
+    - `id` (optional): Filter nodes by ID.
 
 ### Add Storage Item
 - **Endpoint**: `/api/additem`
@@ -113,7 +113,8 @@ This is a versatile and customizable Storage System. It has the ability to combi
     "quantity": "integer",
     "node": "integer",
     "position": "integer",
-    "url": "string"
+    "url": "string",
+    "slots": "array"
     }   
   ```
 
