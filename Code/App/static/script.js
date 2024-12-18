@@ -117,7 +117,7 @@
 //         // });
 // });
 
-var server = "192.168.1.105"; // Server IP address
+var server = "192.168.1.118"// Server IP address
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
