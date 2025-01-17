@@ -150,6 +150,19 @@ This is a versatile and customizable Storage System. It has the ability to combi
 - ESP32 DevBoard or Controller PCB (WIP).
 - Neopixels (WS2812B) or [Indicator PCB](https://github.com/Pegoku/StorageSystem/tree/master/PCB/Indicators).
 - Some wire.
+- Edit Code/App/static/script.js `server` variable
+- Edit Code/Node/include/.env with the correct settings
+
+### Docker (API + Website)
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/Pegoku/StorageSystem.git
+    cd StorageSystem
+    ```
+2. Build and run the Docker containers:
+  ```sh
+  docker compose up -d --build
+  ```
 
 ### API 
 1. Clone the repository:
