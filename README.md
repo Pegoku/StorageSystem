@@ -172,7 +172,7 @@ This is a versatile and customizable Storage System. It has the ability to combi
 1. Clone the repository:
   ```sh
   git clone https://github.com/Pegoku/StorageSystem.git
-  cd StorageSystem/Code/Server
+  cd StorageSystem
   ```
 2. Build and run the Docker container:
   ```sh

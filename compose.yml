@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: server.Dockerfile
+    image: storagesystem:server
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./database.db:/app/database.db
+    restart: unless-stopped
+  
+  app:
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    image: storagesystem:app
+    ports:
+      - "5001:5001"
+    restart: unless-stopped
