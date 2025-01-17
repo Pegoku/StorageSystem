@@ -1,5 +1,5 @@
 FROM ubuntu:24.04
-EXPOSE 5001
+EXPOSE 5506
 
 RUN apt-get update
 RUN apt-get install -y python3

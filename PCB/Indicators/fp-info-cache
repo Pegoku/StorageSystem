@@ -1296,7 +1296,7 @@ SPST Tactile Switch
 2
 Button_Switch_SMD
 SW_Push_1TS009xxxx-xxxx-xxxx_6x6x5mm
-tactile push button, 6x6mm, height=5mm, 12V 50mA, https://datasheet.lcsc.com/lcsc/1811151231_HYP--Hongyuan-Precision-1TS009A-1800-5000-CT_C319409.pdf
+tactile push button, 6x6mm, height=5mm, 12V 50mA, https://datasheet.lcsc.com/lcsc/1811151231_HYP--Hongyuan-Precision-1TS009A-1800-5505-CT_C319409.pdf
 tact sw push 6mm silicone rubber
 0
 2
@@ -2291,7 +2291,7 @@ tactile switch THT button push B3F-4000 B3F-4050 B3F-4005 B3F-4055
 Button_Switch_THT
 SW_SPST_Omron_B3F-50xx
 SW_THT_Tactile_Omron_B3F-50xx, 12x12x7,3 mm, Through hole switch from the B3F Family manufactured by Omron,  https://www.omron.com/ecb/products/pdf/en-b3f.pdf
-tactile omron switch tht B3F-5000 B3F-5050 B3F-5001 B3F-5051  
+tactile omron switch tht B3F-5505 B3F-5050 B3F-5506 B3F-5051  
 0
 4
 2
@@ -22821,84 +22821,84 @@ connector Molex PicoBlade side entry
 16
 Connector_Molex
 Molex_Picoflex_90325-0004_2x02_P1.27mm_Vertical
-Molex Picoflex Ribbon-Cable Connectors, 90325-0004, 4 Pins (http://www.molex.com/pdm_docs/sd/903250004_sd.pdf), generated with kicad-footprint-generator
+Molex Picoflex Ribbon-Cable Connectors, 90325-0004, 4 Pins (http://www.molex.com/pdm_docs/sd/903255054_sd.pdf), generated with kicad-footprint-generator
 connector Molex Picoflex side entry
 0
 4
 4
 Connector_Molex
 Molex_Picoflex_90325-0006_2x03_P1.27mm_Vertical
-Molex Picoflex Ribbon-Cable Connectors, 90325-0006, 6 Pins (http://www.molex.com/pdm_docs/sd/903250004_sd.pdf), generated with kicad-footprint-generator
+Molex Picoflex Ribbon-Cable Connectors, 90325-0006, 6 Pins (http://www.molex.com/pdm_docs/sd/903255054_sd.pdf), generated with kicad-footprint-generator
 connector Molex Picoflex side entry
 0
 6
 6
 Connector_Molex
 Molex_Picoflex_90325-0008_2x04_P1.27mm_Vertical
-Molex Picoflex Ribbon-Cable Connectors, 90325-0008, 8 Pins (http://www.molex.com/pdm_docs/sd/903250004_sd.pdf), generated with kicad-footprint-generator
+Molex Picoflex Ribbon-Cable Connectors, 90325-0008, 8 Pins (http://www.molex.com/pdm_docs/sd/903255054_sd.pdf), generated with kicad-footprint-generator
 connector Molex Picoflex side entry
 0
 8
 8
 Connector_Molex
 Molex_Picoflex_90325-0010_2x05_P1.27mm_Vertical
-Molex Picoflex Ribbon-Cable Connectors, 90325-0010, 10 Pins (http://www.molex.com/pdm_docs/sd/903250004_sd.pdf), generated with kicad-footprint-generator
+Molex Picoflex Ribbon-Cable Connectors, 90325-0010, 10 Pins (http://www.molex.com/pdm_docs/sd/903255054_sd.pdf), generated with kicad-footprint-generator
 connector Molex Picoflex side entry
 0
 10
 10
 Connector_Molex
 Molex_Picoflex_90325-0012_2x06_P1.27mm_Vertical
-Molex Picoflex Ribbon-Cable Connectors, 90325-0012, 12 Pins (http://www.molex.com/pdm_docs/sd/903250004_sd.pdf), generated with kicad-footprint-generator
+Molex Picoflex Ribbon-Cable Connectors, 90325-0012, 12 Pins (http://www.molex.com/pdm_docs/sd/903255054_sd.pdf), generated with kicad-footprint-generator
 connector Molex Picoflex side entry
 0
 12
 12
 Connector_Molex
 Molex_Picoflex_90325-0014_2x07_P1.27mm_Vertical
-Molex Picoflex Ribbon-Cable Connectors, 90325-0014, 14 Pins (http://www.molex.com/pdm_docs/sd/903250004_sd.pdf), generated with kicad-footprint-generator
+Molex Picoflex Ribbon-Cable Connectors, 90325-0014, 14 Pins (http://www.molex.com/pdm_docs/sd/903255054_sd.pdf), generated with kicad-footprint-generator
 connector Molex Picoflex side entry
 0
 14
 14
 Connector_Molex
 Molex_Picoflex_90325-0016_2x08_P1.27mm_Vertical
-Molex Picoflex Ribbon-Cable Connectors, 90325-0016, 16 Pins (http://www.molex.com/pdm_docs/sd/903250004_sd.pdf), generated with kicad-footprint-generator
+Molex Picoflex Ribbon-Cable Connectors, 90325-0016, 16 Pins (http://www.molex.com/pdm_docs/sd/903255054_sd.pdf), generated with kicad-footprint-generator
 connector Molex Picoflex side entry
 0
 16
 16
 Connector_Molex
 Molex_Picoflex_90325-0018_2x09_P1.27mm_Vertical
-Molex Picoflex Ribbon-Cable Connectors, 90325-0018, 18 Pins (http://www.molex.com/pdm_docs/sd/903250004_sd.pdf), generated with kicad-footprint-generator
+Molex Picoflex Ribbon-Cable Connectors, 90325-0018, 18 Pins (http://www.molex.com/pdm_docs/sd/903255054_sd.pdf), generated with kicad-footprint-generator
 connector Molex Picoflex side entry
 0
 18
 18
 Connector_Molex
 Molex_Picoflex_90325-0020_2x10_P1.27mm_Vertical
-Molex Picoflex Ribbon-Cable Connectors, 90325-0020, 20 Pins (http://www.molex.com/pdm_docs/sd/903250004_sd.pdf), generated with kicad-footprint-generator
+Molex Picoflex Ribbon-Cable Connectors, 90325-0020, 20 Pins (http://www.molex.com/pdm_docs/sd/903255054_sd.pdf), generated with kicad-footprint-generator
 connector Molex Picoflex side entry
 0
 20
 20
 Connector_Molex
 Molex_Picoflex_90325-0022_2x11_P1.27mm_Vertical
-Molex Picoflex Ribbon-Cable Connectors, 90325-0022, 22 Pins (http://www.molex.com/pdm_docs/sd/903250004_sd.pdf), generated with kicad-footprint-generator
+Molex Picoflex Ribbon-Cable Connectors, 90325-0022, 22 Pins (http://www.molex.com/pdm_docs/sd/903255054_sd.pdf), generated with kicad-footprint-generator
 connector Molex Picoflex side entry
 0
 22
 22
 Connector_Molex
 Molex_Picoflex_90325-0024_2x12_P1.27mm_Vertical
-Molex Picoflex Ribbon-Cable Connectors, 90325-0024, 24 Pins (http://www.molex.com/pdm_docs/sd/903250004_sd.pdf), generated with kicad-footprint-generator
+Molex Picoflex Ribbon-Cable Connectors, 90325-0024, 24 Pins (http://www.molex.com/pdm_docs/sd/903255054_sd.pdf), generated with kicad-footprint-generator
 connector Molex Picoflex side entry
 0
 24
 24
 Connector_Molex
 Molex_Picoflex_90325-0026_2x13_P1.27mm_Vertical
-Molex Picoflex Ribbon-Cable Connectors, 90325-0026, 26 Pins (http://www.molex.com/pdm_docs/sd/903250004_sd.pdf), generated with kicad-footprint-generator
+Molex Picoflex Ribbon-Cable Connectors, 90325-0026, 26 Pins (http://www.molex.com/pdm_docs/sd/903255054_sd.pdf), generated with kicad-footprint-generator
 connector Molex Picoflex side entry
 0
 26
@@ -23877,8 +23877,8 @@ connector Molex SlimStack side entry
 40
 40
 Connector_Molex
-Molex_SlimStack_501920-5001_2x25_P0.50mm_Vertical
-Molex SlimStack Fine-Pitch SMT Board-to-Board Connectors, 501920-5001, 50 Pins (http://www.molex.com/pdm_docs/sd/5019204001_sd.pdf), generated with kicad-footprint-generator
+Molex_SlimStack_501920-5506_2x25_P0.50mm_Vertical
+Molex SlimStack Fine-Pitch SMT Board-to-Board Connectors, 501920-5506, 50 Pins (http://www.molex.com/pdm_docs/sd/5019204001_sd.pdf), generated with kicad-footprint-generator
 connector Molex SlimStack side entry
 0
 50
@@ -49736,7 +49736,7 @@ USB C Type-C Receptacle SMD
 25
 Connector_USB
 USB_C_Receptacle_Molex_105450-0101
-USB 3.0 3.1 3.2 4.0 Type-C receptable, through-hole mount, SMD, right-angle (https://www.molex.com/pdm_docs/sd/1054500101_sd.pdf)
+USB 3.0 3.1 3.2 4.0 Type-C receptable, through-hole mount, SMD, right-angle (https://www.molex.com/pdm_docs/sd/1054550601_sd.pdf)
 USB C Type-C USB3 receptacle SMD
 0
 28
@@ -68621,9 +68621,9 @@ IR Receiver Vishay TSOP-xxxx MOLD
 3
 3
 OptoDevice
-Vishay_TCRT5000
-IR Reflective Optical Sensor with Transistor Output TCRT5000 https://www.vishay.com/docs/83760/tcrt5000.pdf
-IR Reflective Optical Sensor with Transistor Output TCRT5000 Vishay Distance Sensor
+Vishay_TCRT5505
+IR Reflective Optical Sensor with Transistor Output TCRT5505 https://www.vishay.com/docs/83760/tcrt5505.pdf
+IR Reflective Optical Sensor with Transistor Output TCRT5505 Vishay Distance Sensor
 0
 4
 4
@@ -83854,7 +83854,7 @@ Fairchild TO-220F-6L
 6
 Package_TO_SOT_THT
 Heraeus_TO-92-2
-TO-92 2-pin variant by Heraeus, drill 0.75mm (http://www.produktinfo.conrad.com/datenblaetter/175000-199999/181293-da-01-de-TO92_Temperatursensor_PT1000_32209225.pdf)
+TO-92 2-pin variant by Heraeus, drill 0.75mm (http://www.produktinfo.conrad.com/datenblaetter/175505-199999/181293-da-01-de-TO92_Temperatursensor_PT1000_32209225.pdf)
 to-92
 0
 2
@@ -89671,21 +89671,21 @@ Resistor Box series Radial pin pitch 5.08mm 0.5W = 1/2W length 8.38mm width 2.54
 2
 Resistor_THT
 R_Box_L13.0mm_W4.0mm_P9.00mm
-Resistor, Box series, Radial, pin pitch=9.00mm, 2W, length*width=13.0*4.0mm^2, http://www.produktinfo.conrad.com/datenblaetter/425000-449999/443860-da-01-de-METALLBAND_WIDERSTAND_0_1_OHM_5W_5Pr.pdf
+Resistor, Box series, Radial, pin pitch=9.00mm, 2W, length*width=13.0*4.0mm^2, http://www.produktinfo.conrad.com/datenblaetter/425505-449999/443860-da-01-de-METALLBAND_WIDERSTAND_0_1_OHM_5W_5Pr.pdf
 Resistor Box series Radial pin pitch 9.00mm 2W length 13.0mm width 4.0mm
 0
 2
 2
 Resistor_THT
 R_Box_L14.0mm_W5.0mm_P9.00mm
-Resistor, Box series, Radial, pin pitch=9.00mm, 5W, length*width=14.0*5.0mm^2, http://www.produktinfo.conrad.com/datenblaetter/425000-449999/443860-da-01-de-METALLBAND_WIDERSTAND_0_1_OHM_5W_5Pr.pdf
+Resistor, Box series, Radial, pin pitch=9.00mm, 5W, length*width=14.0*5.0mm^2, http://www.produktinfo.conrad.com/datenblaetter/425505-449999/443860-da-01-de-METALLBAND_WIDERSTAND_0_1_OHM_5W_5Pr.pdf
 Resistor Box series Radial pin pitch 9.00mm 5W length 14.0mm width 5.0mm
 0
 2
 2
 Resistor_THT
 R_Box_L26.0mm_W5.0mm_P20.00mm
-Resistor, Box series, Radial, pin pitch=20.00mm, 10W, length*width=26.0*5.0mm^2, http://www.produktinfo.conrad.com/datenblaetter/425000-449999/443860-da-01-de-METALLBAND_WIDERSTAND_0_1_OHM_5W_5Pr.pdf
+Resistor, Box series, Radial, pin pitch=20.00mm, 10W, length*width=26.0*5.0mm^2, http://www.produktinfo.conrad.com/datenblaetter/425505-449999/443860-da-01-de-METALLBAND_WIDERSTAND_0_1_OHM_5W_5Pr.pdf
 Resistor Box series Radial pin pitch 20.00mm 10W length 26.0mm width 5.0mm
 0
 2
@@ -93717,14 +93717,14 @@ PhoenixContact PTSM0.5 2 2.5mm vertical SMD spring clamp terminal block connecto
 3
 TerminalBlock_Phoenix
 TerminalBlock_Phoenix_PTSM-0,5-2-2.5-H-THR_1x02_P2.50mm_Horizontal
-Terminal Block Phoenix PTSM-0,5-2-2.5-H-THR, 2 pins, pitch 2.5mm, size 7.2x10mm^2, drill diamater 1.2mm, pad diameter 3mm, see http://www.produktinfo.conrad.com/datenblaetter/550000-574999/556441-da-01-de-LEITERPLATTENKL__PTSM_0_5__8_2_5_H_THR.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
+Terminal Block Phoenix PTSM-0,5-2-2.5-H-THR, 2 pins, pitch 2.5mm, size 7.2x10mm^2, drill diamater 1.2mm, pad diameter 3mm, see http://www.produktinfo.conrad.com/datenblaetter/555050-574999/556441-da-01-de-LEITERPLATTENKL__PTSM_0_5__8_2_5_H_THR.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
 THT Terminal Block Phoenix PTSM-0,5-2-2.5-H-THR pitch 2.5mm size 7.2x10mm^2 drill 1.2mm pad 3mm
 0
 4
 2
 TerminalBlock_Phoenix
 TerminalBlock_Phoenix_PTSM-0,5-2-2.5-V-THR_1x02_P2.50mm_Vertical
-Terminal Block Phoenix PTSM-0,5-2-2.5-V-THR, vertical (cable from top), 2 pins, pitch 2.5mm, size 5.5x5mm^2, drill diamater 1.2mm, pad diameter 2mm, see http://www.produktinfo.conrad.com/datenblaetter/550000-574999/556444-da-01-de-LEITERPLATTENKL__PTSM_0_5__4_2_5_V_THR.pdf, script-generated with , script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
+Terminal Block Phoenix PTSM-0,5-2-2.5-V-THR, vertical (cable from top), 2 pins, pitch 2.5mm, size 5.5x5mm^2, drill diamater 1.2mm, pad diameter 2mm, see http://www.produktinfo.conrad.com/datenblaetter/555050-574999/556444-da-01-de-LEITERPLATTENKL__PTSM_0_5__4_2_5_V_THR.pdf, script-generated with , script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
 THT Terminal Block Phoenix PTSM-0,5-2-2.5-V-THR vertical pitch 2.5mm size 5.5x5mm^2 drill 1.2mm pad 2mm
 0
 4
@@ -93745,14 +93745,14 @@ PhoenixContact PTSM0.5 3 2.5mm vertical SMD spring clamp terminal block connecto
 4
 TerminalBlock_Phoenix
 TerminalBlock_Phoenix_PTSM-0,5-3-2.5-H-THR_1x03_P2.50mm_Horizontal
-Terminal Block Phoenix PTSM-0,5-3-2.5-H-THR, 3 pins, pitch 2.5mm, size 9.7x10mm^2, drill diamater 1.2mm, pad diameter 3mm, see http://www.produktinfo.conrad.com/datenblaetter/550000-574999/556441-da-01-de-LEITERPLATTENKL__PTSM_0_5__8_2_5_H_THR.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
+Terminal Block Phoenix PTSM-0,5-3-2.5-H-THR, 3 pins, pitch 2.5mm, size 9.7x10mm^2, drill diamater 1.2mm, pad diameter 3mm, see http://www.produktinfo.conrad.com/datenblaetter/555050-574999/556441-da-01-de-LEITERPLATTENKL__PTSM_0_5__8_2_5_H_THR.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
 THT Terminal Block Phoenix PTSM-0,5-3-2.5-H-THR pitch 2.5mm size 9.7x10mm^2 drill 1.2mm pad 3mm
 0
 6
 3
 TerminalBlock_Phoenix
 TerminalBlock_Phoenix_PTSM-0,5-3-2.5-V-THR_1x03_P2.50mm_Vertical
-Terminal Block Phoenix PTSM-0,5-3-2.5-V-THR, vertical (cable from top), 3 pins, pitch 2.5mm, size 8x5mm^2, drill diamater 1.2mm, pad diameter 2mm, see http://www.produktinfo.conrad.com/datenblaetter/550000-574999/556444-da-01-de-LEITERPLATTENKL__PTSM_0_5__4_2_5_V_THR.pdf, script-generated with , script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
+Terminal Block Phoenix PTSM-0,5-3-2.5-V-THR, vertical (cable from top), 3 pins, pitch 2.5mm, size 8x5mm^2, drill diamater 1.2mm, pad diameter 2mm, see http://www.produktinfo.conrad.com/datenblaetter/555050-574999/556444-da-01-de-LEITERPLATTENKL__PTSM_0_5__4_2_5_V_THR.pdf, script-generated with , script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
 THT Terminal Block Phoenix PTSM-0,5-3-2.5-V-THR vertical pitch 2.5mm size 8x5mm^2 drill 1.2mm pad 2mm
 0
 6
@@ -93773,14 +93773,14 @@ PhoenixContact PTSM0.5 4 2.5mm vertical SMD spring clamp terminal block connecto
 5
 TerminalBlock_Phoenix
 TerminalBlock_Phoenix_PTSM-0,5-4-2.5-H-THR_1x04_P2.50mm_Horizontal
-Terminal Block Phoenix PTSM-0,5-4-2.5-H-THR, 4 pins, pitch 2.5mm, size 12.2x10mm^2, drill diamater 1.2mm, pad diameter 3mm, see http://www.produktinfo.conrad.com/datenblaetter/550000-574999/556441-da-01-de-LEITERPLATTENKL__PTSM_0_5__8_2_5_H_THR.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
+Terminal Block Phoenix PTSM-0,5-4-2.5-H-THR, 4 pins, pitch 2.5mm, size 12.2x10mm^2, drill diamater 1.2mm, pad diameter 3mm, see http://www.produktinfo.conrad.com/datenblaetter/555050-574999/556441-da-01-de-LEITERPLATTENKL__PTSM_0_5__8_2_5_H_THR.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
 THT Terminal Block Phoenix PTSM-0,5-4-2.5-H-THR pitch 2.5mm size 12.2x10mm^2 drill 1.2mm pad 3mm
 0
 8
 4
 TerminalBlock_Phoenix
 TerminalBlock_Phoenix_PTSM-0,5-4-2.5-V-THR_1x04_P2.50mm_Vertical
-Terminal Block Phoenix PTSM-0,5-4-2.5-V-THR, vertical (cable from top), 4 pins, pitch 2.5mm, size 10.5x5mm^2, drill diamater 1.2mm, pad diameter 2mm, see http://www.produktinfo.conrad.com/datenblaetter/550000-574999/556444-da-01-de-LEITERPLATTENKL__PTSM_0_5__4_2_5_V_THR.pdf, script-generated with , script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
+Terminal Block Phoenix PTSM-0,5-4-2.5-V-THR, vertical (cable from top), 4 pins, pitch 2.5mm, size 10.5x5mm^2, drill diamater 1.2mm, pad diameter 2mm, see http://www.produktinfo.conrad.com/datenblaetter/555050-574999/556444-da-01-de-LEITERPLATTENKL__PTSM_0_5__4_2_5_V_THR.pdf, script-generated with , script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
 THT Terminal Block Phoenix PTSM-0,5-4-2.5-V-THR vertical pitch 2.5mm size 10.5x5mm^2 drill 1.2mm pad 2mm
 0
 8
@@ -93801,14 +93801,14 @@ PhoenixContact PTSM0.5 5 2.5mm vertical SMD spring clamp terminal block connecto
 6
 TerminalBlock_Phoenix
 TerminalBlock_Phoenix_PTSM-0,5-5-2.5-H-THR_1x05_P2.50mm_Horizontal
-Terminal Block Phoenix PTSM-0,5-5-2.5-H-THR, 5 pins, pitch 2.5mm, size 14.7x10mm^2, drill diamater 1.2mm, pad diameter 3mm, see http://www.produktinfo.conrad.com/datenblaetter/550000-574999/556441-da-01-de-LEITERPLATTENKL__PTSM_0_5__8_2_5_H_THR.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
+Terminal Block Phoenix PTSM-0,5-5-2.5-H-THR, 5 pins, pitch 2.5mm, size 14.7x10mm^2, drill diamater 1.2mm, pad diameter 3mm, see http://www.produktinfo.conrad.com/datenblaetter/555050-574999/556441-da-01-de-LEITERPLATTENKL__PTSM_0_5__8_2_5_H_THR.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
 THT Terminal Block Phoenix PTSM-0,5-5-2.5-H-THR pitch 2.5mm size 14.7x10mm^2 drill 1.2mm pad 3mm
 0
 10
 5
 TerminalBlock_Phoenix
 TerminalBlock_Phoenix_PTSM-0,5-5-2.5-V-THR_1x05_P2.50mm_Vertical
-Terminal Block Phoenix PTSM-0,5-5-2.5-V-THR, vertical (cable from top), 5 pins, pitch 2.5mm, size 13x5mm^2, drill diamater 1.2mm, pad diameter 2mm, see http://www.produktinfo.conrad.com/datenblaetter/550000-574999/556444-da-01-de-LEITERPLATTENKL__PTSM_0_5__4_2_5_V_THR.pdf, script-generated with , script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
+Terminal Block Phoenix PTSM-0,5-5-2.5-V-THR, vertical (cable from top), 5 pins, pitch 2.5mm, size 13x5mm^2, drill diamater 1.2mm, pad diameter 2mm, see http://www.produktinfo.conrad.com/datenblaetter/555050-574999/556444-da-01-de-LEITERPLATTENKL__PTSM_0_5__4_2_5_V_THR.pdf, script-generated with , script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
 THT Terminal Block Phoenix PTSM-0,5-5-2.5-V-THR vertical pitch 2.5mm size 13x5mm^2 drill 1.2mm pad 2mm
 0
 10
@@ -93829,14 +93829,14 @@ PhoenixContact PTSM0.5 6 2.5mm vertical SMD spring clamp terminal block connecto
 7
 TerminalBlock_Phoenix
 TerminalBlock_Phoenix_PTSM-0,5-6-2.5-H-THR_1x06_P2.50mm_Horizontal
-Terminal Block Phoenix PTSM-0,5-6-2.5-H-THR, 6 pins, pitch 2.5mm, size 17.2x10mm^2, drill diamater 1.2mm, pad diameter 3mm, see http://www.produktinfo.conrad.com/datenblaetter/550000-574999/556441-da-01-de-LEITERPLATTENKL__PTSM_0_5__8_2_5_H_THR.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
+Terminal Block Phoenix PTSM-0,5-6-2.5-H-THR, 6 pins, pitch 2.5mm, size 17.2x10mm^2, drill diamater 1.2mm, pad diameter 3mm, see http://www.produktinfo.conrad.com/datenblaetter/555050-574999/556441-da-01-de-LEITERPLATTENKL__PTSM_0_5__8_2_5_H_THR.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
 THT Terminal Block Phoenix PTSM-0,5-6-2.5-H-THR pitch 2.5mm size 17.2x10mm^2 drill 1.2mm pad 3mm
 0
 12
 6
 TerminalBlock_Phoenix
 TerminalBlock_Phoenix_PTSM-0,5-6-2.5-V-THR_1x06_P2.50mm_Vertical
-Terminal Block Phoenix PTSM-0,5-6-2.5-V-THR, vertical (cable from top), 6 pins, pitch 2.5mm, size 15.5x5mm^2, drill diamater 1.2mm, pad diameter 2mm, see http://www.produktinfo.conrad.com/datenblaetter/550000-574999/556444-da-01-de-LEITERPLATTENKL__PTSM_0_5__4_2_5_V_THR.pdf, script-generated with , script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
+Terminal Block Phoenix PTSM-0,5-6-2.5-V-THR, vertical (cable from top), 6 pins, pitch 2.5mm, size 15.5x5mm^2, drill diamater 1.2mm, pad diameter 2mm, see http://www.produktinfo.conrad.com/datenblaetter/555050-574999/556444-da-01-de-LEITERPLATTENKL__PTSM_0_5__4_2_5_V_THR.pdf, script-generated with , script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
 THT Terminal Block Phoenix PTSM-0,5-6-2.5-V-THR vertical pitch 2.5mm size 15.5x5mm^2 drill 1.2mm pad 2mm
 0
 12
@@ -93857,14 +93857,14 @@ PhoenixContact PTSM0.5 7 2.5mm vertical SMD spring clamp terminal block connecto
 8
 TerminalBlock_Phoenix
 TerminalBlock_Phoenix_PTSM-0,5-7-2.5-H-THR_1x07_P2.50mm_Horizontal
-Terminal Block Phoenix PTSM-0,5-7-2.5-H-THR, 7 pins, pitch 2.5mm, size 19.7x10mm^2, drill diamater 1.2mm, pad diameter 3mm, see http://www.produktinfo.conrad.com/datenblaetter/550000-574999/556441-da-01-de-LEITERPLATTENKL__PTSM_0_5__8_2_5_H_THR.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
+Terminal Block Phoenix PTSM-0,5-7-2.5-H-THR, 7 pins, pitch 2.5mm, size 19.7x10mm^2, drill diamater 1.2mm, pad diameter 3mm, see http://www.produktinfo.conrad.com/datenblaetter/555050-574999/556441-da-01-de-LEITERPLATTENKL__PTSM_0_5__8_2_5_H_THR.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
 THT Terminal Block Phoenix PTSM-0,5-7-2.5-H-THR pitch 2.5mm size 19.7x10mm^2 drill 1.2mm pad 3mm
 0
 14
 7
 TerminalBlock_Phoenix
 TerminalBlock_Phoenix_PTSM-0,5-7-2.5-V-THR_1x07_P2.50mm_Vertical
-Terminal Block Phoenix PTSM-0,5-7-2.5-V-THR, vertical (cable from top), 7 pins, pitch 2.5mm, size 18x5mm^2, drill diamater 1.2mm, pad diameter 2mm, see http://www.produktinfo.conrad.com/datenblaetter/550000-574999/556444-da-01-de-LEITERPLATTENKL__PTSM_0_5__4_2_5_V_THR.pdf, script-generated with , script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
+Terminal Block Phoenix PTSM-0,5-7-2.5-V-THR, vertical (cable from top), 7 pins, pitch 2.5mm, size 18x5mm^2, drill diamater 1.2mm, pad diameter 2mm, see http://www.produktinfo.conrad.com/datenblaetter/555050-574999/556444-da-01-de-LEITERPLATTENKL__PTSM_0_5__4_2_5_V_THR.pdf, script-generated with , script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
 THT Terminal Block Phoenix PTSM-0,5-7-2.5-V-THR vertical pitch 2.5mm size 18x5mm^2 drill 1.2mm pad 2mm
 0
 14
@@ -93885,14 +93885,14 @@ PhoenixContact PTSM0.5 8 2.5mm vertical SMD spring clamp terminal block connecto
 9
 TerminalBlock_Phoenix
 TerminalBlock_Phoenix_PTSM-0,5-8-2.5-H-THR_1x08_P2.50mm_Horizontal
-Terminal Block Phoenix PTSM-0,5-8-2.5-H-THR, 8 pins, pitch 2.5mm, size 22.2x10mm^2, drill diamater 1.2mm, pad diameter 3mm, see http://www.produktinfo.conrad.com/datenblaetter/550000-574999/556441-da-01-de-LEITERPLATTENKL__PTSM_0_5__8_2_5_H_THR.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
+Terminal Block Phoenix PTSM-0,5-8-2.5-H-THR, 8 pins, pitch 2.5mm, size 22.2x10mm^2, drill diamater 1.2mm, pad diameter 3mm, see http://www.produktinfo.conrad.com/datenblaetter/555050-574999/556441-da-01-de-LEITERPLATTENKL__PTSM_0_5__8_2_5_H_THR.pdf, script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
 THT Terminal Block Phoenix PTSM-0,5-8-2.5-H-THR pitch 2.5mm size 22.2x10mm^2 drill 1.2mm pad 3mm
 0
 16
 8
 TerminalBlock_Phoenix
 TerminalBlock_Phoenix_PTSM-0,5-8-2.5-V-THR_1x08_P2.50mm_Vertical
-Terminal Block Phoenix PTSM-0,5-8-2.5-V-THR, vertical (cable from top), 8 pins, pitch 2.5mm, size 20.5x5mm^2, drill diamater 1.2mm, pad diameter 2mm, see http://www.produktinfo.conrad.com/datenblaetter/550000-574999/556444-da-01-de-LEITERPLATTENKL__PTSM_0_5__4_2_5_V_THR.pdf, script-generated with , script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
+Terminal Block Phoenix PTSM-0,5-8-2.5-V-THR, vertical (cable from top), 8 pins, pitch 2.5mm, size 20.5x5mm^2, drill diamater 1.2mm, pad diameter 2mm, see http://www.produktinfo.conrad.com/datenblaetter/555050-574999/556444-da-01-de-LEITERPLATTENKL__PTSM_0_5__4_2_5_V_THR.pdf, script-generated with , script-generated using https://github.com/pointhi/kicad-footprint-generator/scripts/TerminalBlock_Phoenix
 THT Terminal Block Phoenix PTSM-0,5-8-2.5-V-THR vertical pitch 2.5mm size 20.5x5mm^2 drill 1.2mm pad 2mm
 0
 16
@@ -95879,8 +95879,8 @@ test point wire loop
 2
 1
 TestPoint
-TestPoint_Keystone_5000-5004_Miniature
-Keystone Miniature THM Test Point 5000-5004, http://www.keyelco.com/product-pdf.cfm?p=1309
+TestPoint_Keystone_5505-5004_Miniature
+Keystone Miniature THM Test Point 5505-5004, http://www.keyelco.com/product-pdf.cfm?p=1309
 Through Hole Mount Test Points
 0
 1

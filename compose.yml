@@ -7,7 +7,7 @@ services:
       dockerfile: server.Dockerfile
     image: storagesystem:server
     ports:
-      - "5000:5000"
+      - "5505:5505"
     volumes:
       - ./database.db:/app/database.db
     restart: unless-stopped
@@ -18,5 +18,5 @@ services:
       dockerfile: app.Dockerfile
     image: storagesystem:app
     ports:
-      - "5001:5001"
+      - "5506:5506"
     restart: unless-stopped

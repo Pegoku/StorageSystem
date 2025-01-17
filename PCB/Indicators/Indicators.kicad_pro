@@ -18,7 +18,7 @@
         "dimension_units": 3,
         "dimensions": {
           "arrow_length": 1270000,
-          "extension_offset": 500000,
+          "extension_offset": 550500,
           "keep_text_aligned": true,
           "suppress_zeroes": false,
           "text_position": 0,

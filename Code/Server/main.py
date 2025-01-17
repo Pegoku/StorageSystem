@@ -398,4 +398,4 @@ def locate_item():
 
 if __name__ == '__main__':
     init_db()
-    api.run(debug=True, host='0.0.0.0', port=5000)
+    api.run(debug=True, host='0.0.0.0', port=5505)

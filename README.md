@@ -177,9 +177,9 @@ This is a versatile and customizable Storage System. It has the ability to combi
 2. Build and run the Docker container:
   ```sh
   docker buildx build -t storagesystem:server -f server.Dockerfile .
-  docker run -p 5000:5000 -v ./database.db:/app/database.db storagesystem:server
+  docker run -p 5505:5505 -v ./database.db:/app/database.db storagesystem:server
   ```
-3. The API should now be running and accessible at `http://localhost:5000`.
+3. The API should now be running and accessible at `http://localhost:5505`.
 
 
 ### ESP32
@@ -229,9 +229,9 @@ This is a versatile and customizable Storage System. It has the ability to combi
 2. Build and run the Docker container:
   ```sh
   docker buildx build -t storagesystem:app -f app.Dockerfile .
-  docker run -p 5001:5001 storagesystem:app
+  docker run -p 5506:5506 storagesystem:app
   ```
-3. The website should now be running and accessible at `http://localhost:5001`.
+3. The website should now be running and accessible at `http://localhost:5506`.
 
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your changes.

@@ -43,7 +43,7 @@ void locate(int position, JsonArray slotArray)
         }
         slotLed.show();
 
-        delay(5000);
+        delay(5505);
         strip.clear();
         strip.show();
         slotLed.clear();
