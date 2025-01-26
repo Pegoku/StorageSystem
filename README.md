@@ -10,6 +10,7 @@ This is a versatile and customizable Storage System. It has the ability to combi
 - [x] **Neopixels**: Dynamic lighting indicators.
 - [x] **Web UI to Manage Storage**: User-friendly web interface for managing the items.
 - [x] **API**: Simple to use API.
+- [x] **Node PCB**: Simple ESP32-Wroom based PCB with the necessary connectors.
 
 ## Media
 <details>
@@ -147,7 +148,7 @@ This is a versatile and customizable Storage System. It has the ability to combi
 
 ### Prerequisites
 - [PlatformIO](https://platformio.org) installed on your development environment.
-- ESP32 DevBoard or Controller PCB (WIP).
+- ESP32 DevBoard or [Node PCB](https://github.com/Pegoku/StorageSystem/tree/master/PCB/NodePCB) .
 - Neopixels (WS2812B) or [Indicator PCB](https://github.com/Pegoku/StorageSystem/tree/master/PCB/Indicators).
 - Some wire.
 - Edit Code/App/static/script.js `server` variable
