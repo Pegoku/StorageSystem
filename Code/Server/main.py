@@ -102,6 +102,11 @@ def listNodes():
     conn.close()
     return items
 
+@api.route('/api', methods=['GET'])
+def get_api():
+    return "This is not an api call, to view the avaliable api calls, please visit https://github.com/Pegoku/StorageSystem/blob/master/README.md#api-endpoints"
+
+
 @api.route('/api/list', methods=['GET'])
 def get_list():
     storage = listStorage()
